@@ -71,6 +71,29 @@ Blockly.Blocks['rhyme_say'] = {
   }
 };
 
+
+Blockly.Blocks['repeat'] = {
+    init: function() {
+        this.appendValueInput("number_iterations")
+            .setCheck("Number")
+            .setAlign(Blockly.ALIGN_CENTRE)
+            .appendField(new Blockly.FieldLabelSerializable("repeat"), "repetitions");
+        this.appendDummyInput()
+            .setAlign(Blockly.ALIGN_CENTRE)
+            .appendField("times");
+        this.appendStatementInput("inside_code")
+            .setCheck(null)
+            .appendField(new Blockly.FieldLabelSerializable("do"), "say");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null)
+        this.setColour(120);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+
 Blockly.defineBlocksWithJsonArray([
 	{
 	  "type": "speak",
