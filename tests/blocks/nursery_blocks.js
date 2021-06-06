@@ -71,6 +71,49 @@ Blockly.Blocks['rhyme_say'] = {
   }
 };
 
+Blockly.Blocks['rhyme_humpty_dumpty_sat_on_a_wall'] = {
+  init: function() {
+    this.appendDummyInput("TEXT")
+        .appendField("Humpty Dumpty sat on a wall",'TEXT');
+    this.setOutput(true, null);
+    this.setColour(20);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+}
+
+ Blockly.Blocks['rhyme_humpty_dumpty_great_fall'] = {
+  init: function() {
+    this.appendDummyInput("TEXT")
+        .appendField("Humpty Dumpty had a great fall",'TEXT');
+    this.setOutput(true, null);
+    this.setColour(20);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+ }
+
+ Blockly.Blocks['rhyme_king_hourse_man'] = {
+  init: function() {
+    this.appendDummyInput("TEXT")
+        .appendField("All the kings horses and all the kings men",'TEXT');
+    this.setOutput(true, null);
+    this.setColour(20);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+}
+
+ Blockly.Blocks['rhyme_could_not_put_together'] = {
+  init: function() {
+    this.appendDummyInput("TEXT")
+        .appendField("Couldnt put Humpty together again",'TEXT');
+    this.setOutput(true, null);
+    this.setColour(20);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+ }
 
 Blockly.Blocks['repeat'] = {
     init: function() {

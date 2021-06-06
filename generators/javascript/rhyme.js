@@ -30,6 +30,22 @@ Blockly.JavaScript['repeat'] = function(block) {
 	}
 };
 
+Blockly.JavaScript['rhyme_humpty_dumpty_sat_on_a_wall'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+}
+
+Blockly.JavaScript['rhyme_humpty_dumpty_great_fall'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+}
+
+Blockly.JavaScript['rhyme_king_hourse_man'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+}
+
+Blockly.JavaScript['rhyme_could_not_put_together'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+}
+
 Blockly.JavaScript['speak'] = function(block) {
 	return(Blockly.JavaScript.statementToCode(block, 'NAME'));
 }
