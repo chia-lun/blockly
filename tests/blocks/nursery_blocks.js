@@ -19,6 +19,7 @@ Blockly.Blocks['speak'] = {
   }
 };
 
+//text blocks of Humpty Dumpty
 Blockly.Blocks['rhyme_mary_had_a'] = {
   init: function() {
     this.appendDummyInput('TEXT')
@@ -114,6 +115,56 @@ Blockly.Blocks['rhyme_humpty_dumpty_sat_on_a_wall'] = {
  this.setHelpUrl("");
   }
  }
+
+//text blocks of Five Little Ducks
+ Blockly.Blocks['rhyme_little_ducks'] = {
+  init: function() {
+    this.appendDummyInput("TEXT")
+        .appendField("little ducks went out one day",'TEXT');
+    this.setOutput(true, null);
+    this.setColour(65);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+}
+
+Blockly.Blocks['rhyme_over_the_hills'] = {
+  init: function() {
+    this.appendDummyInput("TEXT")
+        .appendField("count little ducks went out one day",'TEXT');
+    this.setOutput(true, null);
+    this.setColour(65);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+}
+
+Blockly.Blocks['rhyme_mother_duck'] = {
+  init: function() {
+    this.appendDummyInput("TEXT")
+        .appendField("Mother duck said, quack, quack, quack, quack",'TEXT');
+    this.setOutput(true, null);
+    this.setColour(65);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+}
+
+Blockly.Blocks['rhyme_little_duck_back'] = {
+  init: function() {
+    this.appendDummyInput('TEXT')
+        .appendField("But only",'TEXT');
+    this.appendValueInput("Count")
+        .setCheck("Number");
+    this.appendDummyInput('TEXT')
+        .appendField("little ducks come back",'TEXT');
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(65);
+this.setTooltip("");
+this.setHelpUrl("");
+  }
+}
 
 Blockly.Blocks['repeat'] = {
     init: function() {

@@ -30,6 +30,7 @@ Blockly.JavaScript['repeat'] = function(block) {
 	}
 };
 
+//text blocks of Humpty Dumpty
 Blockly.JavaScript['rhyme_humpty_dumpty_sat_on_a_wall'] = function(block) {
 	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
 }
@@ -43,6 +44,23 @@ Blockly.JavaScript['rhyme_king_hourse_man'] = function(block) {
 }
 
 Blockly.JavaScript['rhyme_could_not_put_together'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+}
+
+//text blocks of Five Little Ducks
+Blockly.JavaScript['rhyme_little_ducks'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+}
+
+Blockly.JavaScript['rhyme_over_the_hills'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+}
+
+Blockly.JavaScript['rhyme_mother_duck'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+}
+
+Blockly.JavaScript['rhyme_little_duck_back'] = function(block) {
 	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
 }
 
