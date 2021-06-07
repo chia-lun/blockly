@@ -64,7 +64,7 @@ Blockly.JavaScript['rhyme_little_duck_back'] = function(block) {
 	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
 }
 
-Blockly.JavaScript['speak'] = function(block) {
-	return(Blockly.JavaScript.statementToCode(block, 'NAME'));
+Blockly.JavaScript['nursery_rhyme'] = function(block) {
+	return(Blockly.JavaScript.statementToCode(block, 'nursery_rhyme'));
 }
 

@@ -188,23 +188,14 @@ Blockly.Blocks['repeat'] = {
 };
 
 
-Blockly.defineBlocksWithJsonArray([
-	{
-	  "type": "speak",
-	  "message0": "Speak %1 %2",
-	  "args0": [
-	    {
-	      "type": "input_dummy"
-	    },
-	    {
-	      "type": "input_statement",
-	      "name": "NAME"
-	    }
-	  ],
-	  "colour": 230,
-	  "tooltip": "",
-	  "helpUrl": ""
-	}
-
-
-	])
+Blockly.Blocks['nursery_rhyme'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("Nursery Rhyme");
+        this.appendStatementInput("nursery_rhyme")
+            .setCheck(null);
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+}
