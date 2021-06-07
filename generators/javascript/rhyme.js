@@ -25,9 +25,13 @@ Blockly.JavaScript['repeat'] = function(block) {
 	var value_number_iterations = Blockly.JavaScript.valueToCode(block, 'number_iterations', Blockly.JavaScript.ORDER_ATOMIC);
 	var statements_inside_code = Blockly.JavaScript.statementToCode(block, 'inside_code');
 
+	var code = ""
+
 	for(var i = 0; i < value_number_iterations; i++){
-		eval(statements_inside_code)
+		code = code += statements_inside_code + '\n'
 	}
+
+	return code
 };
 
 //text blocks of Humpty Dumpty
