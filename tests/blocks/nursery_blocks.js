@@ -130,9 +130,10 @@ Blockly.Blocks['rhyme_humpty_dumpty_sat_on_a_wall'] = {
 
 Blockly.Blocks['rhyme_over_the_hills'] = {
   init: function() {
+    this.appendValueInput("count")
+        .setCheck("Number");
     this.appendDummyInput("TEXT")
-        .appendField("count little ducks went out one day",'TEXT');
-    this.setOutput(true, null);
+        .appendField("little ducks went out one day",'TEXT');
     this.setColour(65);
  this.setTooltip("");
  this.setHelpUrl("");
