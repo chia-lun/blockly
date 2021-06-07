@@ -134,6 +134,7 @@ Blockly.Blocks['rhyme_over_the_hills'] = {
         .setCheck("Number");
     this.appendDummyInput("TEXT")
         .appendField("little ducks went out one day",'TEXT');
+    this.setOutput(true, null);
     this.setColour(65);
  this.setTooltip("");
  this.setHelpUrl("");
