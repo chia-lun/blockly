@@ -68,6 +68,37 @@ Blockly.JavaScript['rhyme_little_duck_back'] = function(block) {
 	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
 }
 
+//text blocks for London Bridge
+Blockly.JavaScript['rhyme_london_bridge'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+}
+
+Blockly.JavaScript['rhyme_falling_down'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+}
+
+Blockly.JavaScript['rhyme_my_fair_lady'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+}
+
+//text blocks for Jingle Bells
+Blockly.JavaScript['rhyme_jingle_bells'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+}
+
+Blockly.JavaScript['rhyme_all_the_way'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+}
+
+Blockly.JavaScript['rhyme_fun_to_ride'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+}
+
+Blockly.JavaScript['rhyme_open_sleigh'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+}
+
+//nursery rhyme block
 Blockly.JavaScript['nursery_rhyme'] = function(block) {
 	return(Blockly.JavaScript.statementToCode(block, 'nursery_rhyme'));
 }
