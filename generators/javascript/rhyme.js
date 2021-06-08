@@ -68,6 +68,28 @@ Blockly.JavaScript['rhyme_little_duck_back'] = function(block) {
 	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
 }
 
+Blockly.JavaScript['duck_count'] = function(block) {
+	var variable_number_of_ducks = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('number_of_ducks'), Blockly.Variables.NAME_TYPE);
+	return [variable_number_of_ducks, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+
+Blockly.JavaScript['set_variable'] = function(block) {
+	Blockly.JavaScript.init(workspace);
+	var variable_number_of_ducks = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('number_of_ducks'), Blockly.Variables.NAME_TYPE);
+	var value_variable_value = Blockly.JavaScript.valueToCode(block, 'variable_value', Blockly.JavaScript.ORDER_ATOMIC);
+	var code = 'var ' + variable_number_of_ducks + ' = ' + value_variable_value +';\n';
+	return code;
+};
+
+Blockly.JavaScript['decrement_variable'] = function(block) {
+	Blockly.JavaScript.init(workspace);
+	var variable_number_of_ducks = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('number_of_ducks'), Blockly.Variables.NAME_TYPE);
+	var value_decrease_value = Blockly.JavaScript.valueToCode(block, 'decrease_value', Blockly.JavaScript.ORDER_ATOMIC);
+	var code = 'var ' + variable_number_of_ducks + ' = ' + variable_number_of_ducks + ' - ' + value_decrease_value + ';\n';
+	return code;
+};
+
 //text blocks for London Bridge
 Blockly.JavaScript['rhyme_london_bridge'] = function(block) {
 	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
@@ -102,4 +124,5 @@ Blockly.JavaScript['rhyme_open_sleigh'] = function(block) {
 Blockly.JavaScript['nursery_rhyme'] = function(block) {
 	return(Blockly.JavaScript.statementToCode(block, 'nursery_rhyme'));
 }
+
 

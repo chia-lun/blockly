@@ -120,7 +120,7 @@ Blockly.Blocks['rhyme_humpty_dumpty_sat_on_a_wall'] = {
  Blockly.Blocks['rhyme_little_ducks'] = {
   init: function() {
     this.appendDummyInput("TEXT")
-        .appendField("little ducks went out one day",'TEXT');
+        .appendField("Over the hills and far away",'TEXT');
     this.setOutput(true, null);
     this.setColour(65);
  this.setTooltip("");
@@ -307,7 +307,6 @@ Blockly.Blocks['rhyme_shout'] = {
 Blockly.Blocks['repeat'] = {
     init: function() {
         this.appendValueInput("number_iterations")
-            .setCheck("Number")
             .setAlign(Blockly.ALIGN_CENTRE)
             .appendField(new Blockly.FieldLabelSerializable("repeat"), "repetitions");
         this.appendDummyInput()
@@ -337,3 +336,53 @@ Blockly.Blocks['nursery_rhyme'] = {
         this.setHelpUrl("");
     }
 }
+
+Blockly.Blocks['duck_count'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldVariable("number of ducks"), "number_of_ducks");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(65);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.Blocks['set_variable'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("Set")
+            .appendField(new Blockly.FieldVariable("number of ducks"), "number_of_ducks");
+        this.appendDummyInput()
+            .appendField("to");
+        this.appendValueInput("variable_value")
+            .setCheck("Number");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(330);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.Blocks['decrement_variable'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("Decrease")
+            .appendField(new Blockly.FieldVariable("number of ducks"), "number_of_ducks");
+        this.appendDummyInput()
+            .appendField("by");
+        this.appendValueInput("decrease_value")
+            .setCheck("Number");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(330);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+
