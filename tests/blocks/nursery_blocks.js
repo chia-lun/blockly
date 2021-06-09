@@ -296,7 +296,7 @@ Blockly.Blocks['rhyme_stomp'] = {
 Blockly.Blocks['rhyme_shout'] = {
   init: function() {
     this.appendDummyInput("TEXT")
-        .appendField("hout hurry",'TEXT');
+        .appendField("shout hurry",'TEXT');
     this.setOutput(true, null);
     this.setColour(260);
  this.setTooltip("");
@@ -335,6 +335,36 @@ Blockly.Blocks['nursery_rhyme'] = {
         this.setTooltip("");
         this.setHelpUrl("");
     }
+}
+
+
+Blockly.Blocks['new_set_variable_test_1'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Set")
+        .appendField(new Blockly.FieldVariable("number of verses"), "number_of_verses");
+    this.appendValueInput("number")
+        .setCheck("Number")
+        .appendField("to");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(330);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+}
+
+Blockly.Blocks['verse_count'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldVariable("number of verses"), "number_of_verses");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(330);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
 }
 
 Blockly.Blocks['duck_count'] = {
