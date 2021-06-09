@@ -25,11 +25,7 @@ Blockly.JavaScript['repeat'] = function(block) {
 	var value_number_iterations = Blockly.JavaScript.valueToCode(block, 'number_iterations', Blockly.JavaScript.ORDER_ATOMIC);
 	var statements_inside_code = Blockly.JavaScript.statementToCode(block, 'inside_code');
 
-	var code = ""
-
-	for(var i = 0; i < value_number_iterations; i++){
-		code = code += statements_inside_code + '\n'
-	}
+	var code = 'for(var i = 0; i < ' + value_number_iterations + '; i++){' + statements_inside_code + '\n}';
 
 	return code
 };
@@ -71,7 +67,10 @@ Blockly.JavaScript['rhyme_little_ducks'] = function(block) {
 }
 
 Blockly.JavaScript['rhyme_over_the_hills'] = function(block) {
-	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+	var value_count = Blockly.JavaScript.valueToCode(block, 'count', Blockly.JavaScript.ORDER_ATOMIC);
+	var code = '\'' + value_count + " " + block.getFieldValue('TEXT') + '\''
+	console.log(code)
+	return [code, Blockly.JavaScript.ORDER_ATOMIC];
 }
 
 Blockly.JavaScript['rhyme_mother_duck'] = function(block) {
@@ -79,7 +78,8 @@ Blockly.JavaScript['rhyme_mother_duck'] = function(block) {
 }
 
 Blockly.JavaScript['rhyme_little_duck_back'] = function(block) {
-	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+	var value_count = Blockly.JavaScript.valueToCode(block, 'count', Blockly.JavaScript.ORDER_ATOMIC);
+	return ['\'' + block.getFieldValue('TEXT1') + " " + value_count + " " + block.getFieldValue('TEXT2')+ '\'', Blockly.JavaScript.ORDER_ATOMIC];
 }
 
 Blockly.JavaScript['duck_count'] = function(block) {

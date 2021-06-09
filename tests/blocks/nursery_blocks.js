@@ -131,7 +131,6 @@ Blockly.Blocks['rhyme_humpty_dumpty_sat_on_a_wall'] = {
 Blockly.Blocks['rhyme_over_the_hills'] = {
   init: function() {
     this.appendValueInput("count")
-        .setCheck("Number");
     this.appendDummyInput("TEXT")
         .appendField("little ducks went out one day",'TEXT');
     this.setOutput(true, null);
@@ -154,12 +153,12 @@ Blockly.Blocks['rhyme_mother_duck'] = {
 
 Blockly.Blocks['rhyme_little_duck_back'] = {
   init: function() {
-    this.appendDummyInput('TEXT')
-        .appendField("But only",'TEXT');
-    this.appendValueInput("Count")
+    this.appendDummyInput('TEXT1')
+        .appendField("But only",'TEXT1');
+    this.appendValueInput("count")
         .setCheck("Number");
-    this.appendDummyInput('TEXT')
-        .appendField("little ducks come back",'TEXT');
+    this.appendDummyInput('TEXT2')
+        .appendField("little ducks came back",'TEXT2');
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(65);
