@@ -37,7 +37,7 @@ Blockly.JavaScript['new_set_variable_test_1'] = function(block) {
 	// TODO: Assemble JavaScript into code variable.
 	var code = 'var ' + variable_number_of_verses + ' = ' + value_number +';\n';
 	return code;
-}
+};
 
 Blockly.JavaScript['verse_count'] = function(block) {
 	var variable_number_of_verses = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('number_of_verses'), Blockly.Variables.NAME_TYPE);
@@ -116,6 +116,46 @@ Blockly.JavaScript['rhyme_falling_down'] = function(block) {
 Blockly.JavaScript['rhyme_my_fair_lady'] = function(block) {
 	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
 }
+
+Blockly.JavaScript['for_loop_increment_with_i'] = function(block) {
+	Blockly.JavaScript.init(workspace);
+	var variable_iterated_variable = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('iterated_variable'), Blockly.Variables.NAME_TYPE);
+	var value_lower_bound = Blockly.JavaScript.valueToCode(block, 'lower_bound', Blockly.JavaScript.ORDER_ATOMIC);
+	var value_upper_bound = Blockly.JavaScript.valueToCode(block, 'upper_bound', Blockly.JavaScript.ORDER_ATOMIC);
+	var value_increment_by = Blockly.JavaScript.valueToCode(block, 'increment_by', Blockly.JavaScript.ORDER_ATOMIC);
+	var statements_inside_statement = Blockly.JavaScript.statementToCode(block, 'inside_statement');
+	
+	var code = 'for(var i =' + value_lower_bound + ';i <' + value_upper_bound + '; i +=' + value_increment_by + '){'
+		+variable_iterated_variable+ '= i;'
+		+statements_inside_statement+ ';}\n';
+
+	return code;
+};
+
+Blockly.JavaScript['for_loop_increment_with_j'] = function(block) {
+	Blockly.JavaScript.init(workspace);
+	var variable_iterated_variable = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('iterated_variable'), Blockly.Variables.NAME_TYPE);
+	var value_lower_bound = Blockly.JavaScript.valueToCode(block, 'lower_bound', Blockly.JavaScript.ORDER_ATOMIC);
+	var value_upper_bound = Blockly.JavaScript.valueToCode(block, 'upper_bound', Blockly.JavaScript.ORDER_ATOMIC);
+	var value_increment_by = Blockly.JavaScript.valueToCode(block, 'increment_by', Blockly.JavaScript.ORDER_ATOMIC);
+	var statements_inside_statement = Blockly.JavaScript.statementToCode(block, 'inside_statement');
+	
+	var code = 'for(var j =' + value_lower_bound + ';j <' + value_upper_bound + '; j +=' + value_increment_by + '){'
+		+variable_iterated_variable+ '= j;'
+		+statements_inside_statement+ ';}\n';
+
+	return code;
+};
+
+Blockly.JavaScript['variable_i'] = function(block) {
+	var variable_iterated_variable = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('iterated_variable'), Blockly.Variables.NAME_TYPE);
+	return [variable_iterated_variable, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+Blockly.JavaScript['variable_j'] = function(block) {
+	var variable_iterated_variable = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('iterated_variable'), Blockly.Variables.NAME_TYPE);
+	return [variable_iterated_variable, Blockly.JavaScript.ORDER_ATOMIC];
+};
 
 //text blocks for Jingle Bells
 Blockly.JavaScript['rhyme_jingle_bells'] = function(block) {

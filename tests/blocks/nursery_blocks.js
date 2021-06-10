@@ -414,4 +414,74 @@ Blockly.Blocks['decrement_variable'] = {
     }
 };
 
+Blockly.Blocks['for_loop_increment_with_i'] = {
+  init: function() {
+    this.appendDummyInput("iterated_variable")
+        .appendField("count with ")
+        .appendField(new Blockly.FieldVariable("i"), "iterated_variable");
+    this.appendValueInput("lower_bound")
+        .setCheck("Number")
+        .appendField("from");
+    this.appendValueInput("upper_bound")
+        .setCheck("Number")
+        .appendField("to");
+    this.appendValueInput("increment_by")
+        .setCheck("Number")
+        .appendField("by");
+    this.appendStatementInput("inside_statement")
+        .setCheck(null);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(260);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 
+Blockly.Blocks['for_loop_increment_with_j'] = {
+  init: function() {
+    this.appendDummyInput("iterated_variable")
+        .appendField("count with ")
+        .appendField(new Blockly.FieldVariable("j"), "iterated_variable");
+    this.appendValueInput("lower_bound")
+        .setCheck("Number")
+        .appendField("from");
+    this.appendValueInput("upper_bound")
+        .setCheck("Number")
+        .appendField("to");
+    this.appendValueInput("increment_by")
+        .setCheck("Number")
+        .appendField("by");
+    this.appendStatementInput("inside_statement")
+        .setCheck(null);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(260);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['variable_i'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldVariable("i"), "iterated_variable");
+    this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['variable_j'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldVariable("j"), "iterated_variable");
+    this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
