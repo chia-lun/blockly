@@ -485,3 +485,24 @@ Blockly.Blocks['variable_j'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.JavaScript['rhyme_hey'] = function(block) {
+  return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+};
+ 
+Blockly.JavaScript['jingle'] = function(block) {
+  Blockly.JavaScript.init(workspace);
+  var variable_variable_jingle = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('variable_jingle'), Blockly.Variables.NAME_TYPE);
+  var value_rhyme_1 = Blockly.JavaScript.valueToCode(block, 'rhyme_1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_rhyme_2 = Blockly.JavaScript.valueToCode(block, 'rhyme_2', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_rhyme_3 = Blockly.JavaScript.valueToCode(block, 'rhyme_3', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_rhyme_4 = Blockly.JavaScript.valueToCode(block, 'rhyme_4', Blockly.JavaScript.ORDER_ATOMIC);
+
+  var code = 'var ' + variable_variable_jingle + '=' + value_rhyme_1 + '+' + value_rhyme_2 + '+' + value_rhyme_3 + '+' + value_rhyme_4 + ';\n';
+  return code;
+};
+ 
+Blockly.JavaScript['jingle_variable'] = function(block) {
+  var variable_variable_jingle = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('variable_jingle'), Blockly.Variables.NAME_TYPE);
+  return [variable_variable_jingle, Blockly.JavaScript.ORDER_NONE];
+};

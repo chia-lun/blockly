@@ -174,6 +174,50 @@ Blockly.JavaScript['rhyme_open_sleigh'] = function(block) {
 	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
 }
 
+Blockly.Blocks['rhyme_hey'] = {
+	init: function() {
+	  this.appendDummyInput("TEXT")
+		  .appendField("Hey",'TEXT');
+	  this.setOutput(true, null);
+	  this.setColour(65);
+   this.setTooltip("");
+   this.setHelpUrl("");
+	}
+};
+  
+Blockly.Blocks['jingle'] = {
+	init: function() {
+		this.appendDummyInput("variable_jingle")
+			.appendField(new Blockly.FieldVariable("jingle"), "variable_jingle")
+			.appendField("=");
+		this.appendValueInput("rhyme_1")
+			.setCheck("TEXT")
+			.setAlign(Blockly.ALIGN_CENTRE);
+		this.appendValueInput("rhyme_2")
+			.setCheck("TEXT");
+		this.appendValueInput("rhyme_3")
+			.setCheck("TEXT");
+		this.appendValueInput("rhyme_4")
+			.setCheck("TEXT");
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(330);
+	this.setTooltip("");
+	this.setHelpUrl("");
+	}
+};
+  
+Blockly.Blocks['jingle_variable'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldVariable("jingle"), "variable_jingle");
+		this.setOutput(true, null);
+		this.setColour(230);
+	this.setTooltip("");
+	this.setHelpUrl("");
+	}
+};
+
 //nursery rhyme block
 Blockly.JavaScript['nursery_rhyme'] = function(block) {
 	return(Blockly.JavaScript.statementToCode(block, 'nursery_rhyme'));
