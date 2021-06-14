@@ -206,7 +206,8 @@ Blockly.BlockSvg.prototype.makeAriaLabel = function() {
 Blockly.BlockSvg.prototype.updateLabel = function(recurse = true) {
   // TODO: don't use privately marked variable
   if (this.svgPath_) {
-    this.svgPath_.setAttribute('aria-label', this.makeAriaLabel());
+    this.svgPath_.setAttribute('aria-hidden', 'true');
+    //this.svgPath_.setAttribute('aria-label', this.makeAriaLabel());
     if (recurse && this.getParent()) {
       this.getParent().updateLabel();
     }

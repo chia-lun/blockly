@@ -58,19 +58,19 @@ Blockly.JavaScript['rhyme_king_hourse_man'] = function(block) {
 }
 
 Blockly.JavaScript['rhyme_could_not_put_together'] = function(block) {
-	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ADDITION];
 }
 
 //text blocks of Five Little Ducks
 Blockly.JavaScript['rhyme_little_ducks'] = function(block) {
-	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+	var value_count = Blockly.JavaScript.valueToCode(block, 'count', Blockly.JavaScript.ORDER_ATOMIC);
+	var text = block.getFieldValue('TEXT');
+	var code = '\'' + value_count + ' ' + text + '\'';
+	return [code , Blockly.JavaScript.ORDER_ATOMIC];
 }
 
 Blockly.JavaScript['rhyme_over_the_hills'] = function(block) {
-	var value_count = Blockly.JavaScript.valueToCode(block, 'count', Blockly.JavaScript.ORDER_ATOMIC);
-	var code = '\'' + value_count + " " + block.getFieldValue('TEXT') + '\''
-	console.log(code)
-	return [code, Blockly.JavaScript.ORDER_ATOMIC];
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
 }
 
 Blockly.JavaScript['rhyme_mother_duck'] = function(block) {

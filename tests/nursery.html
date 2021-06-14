@@ -253,7 +253,7 @@ function getToolboxElement() {
 }
 
 function injectToolbox(container) {
-  var navContainer = document.createElement('div');
+  var navContainer = document.createElement('nav');
   navContainer.setAttribute('id', 'navBar');
   container.appendChild(navContainer);
   navContainer.appendChild(getNavList());
@@ -493,7 +493,7 @@ h1 {
 
   <h1>Blockly Playground</h1>
 
-  <xml id="toolbox-categories" style="display: none">
+  <xml id="toolbox-categories" style="display: none" role="navigation">
     <category name="Add blocks" categorystyle="Text blocks">
       <block type="rhyme_little_lamb"></block>
       <block type="rhyme_mary_had_a"></block>
@@ -525,7 +525,7 @@ h1 {
     </category>
   </xml>
 
-  <block id="nursery_rhyme" type="nursery_rhyme" deletable="false" class="start_blocks"></block>
+  <block id="nursery_rhyme" type="nursery_rhyme" deletable="false" class="start_blocks" aria-disabled="true"></block>
   <block type="rhyme_say"></block>
   <block type="rhyme_say"></block>
   <block type="rhyme_say"></block>
