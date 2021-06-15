@@ -177,9 +177,9 @@ function start() {
   document.getElementsByClassName('blocklyToolboxDiv')[0].style.display = 'none';
 
   var nursery_rhyme_block = document.getElementById("nursery_rhyme");
-  var verse_set_block = document.getElementById("start_verse_Set");
+  //var verse_set_block = document.getElementById("start_verse_Set");
   addBlockToWorkspace(nursery_rhyme_block, false);
-  addBlockToWorkspace(verse_set_block, false);
+  //addBlockToWorkspace(verse_set_block, false);
 }
 
 /**
@@ -253,6 +253,11 @@ function getToolboxElement() {
 }
 
 function injectToolbox(container) {
+  var headingTag = document.createElement('H2');
+  var text = document.createTextNode('Toolbox');
+  headingTag.appendChild(text);
+  container.appendChild(headingTag);
+
   var navContainer = document.createElement('div');
   navContainer.setAttribute('id', 'navBar');
   container.appendChild(navContainer);
@@ -529,14 +534,14 @@ h1 {
   <block type="rhyme_stomp"></block> 
   <block type="rhyme_shout"></block> 
 
-  <block type="variables_set" id="start_verse_Set" deletable="false" editable="false" class="start_blocks">
+  <!--<block type="variables_set" id="start_verse_Set" deletable="false" editable="false" class="start_blocks">
     <field name="VAR" variabletype="">verse</field>
     <value name="VALUE">
       <block type="math_number" deletable="false">
         <field name="NUM">1</field>
       </block>
     </value>
-  </block>
+  </block>-->
 
 
   <!-- Mac students added this code -->

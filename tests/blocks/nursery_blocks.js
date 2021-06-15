@@ -117,22 +117,23 @@ Blockly.Blocks['rhyme_humpty_dumpty_sat_on_a_wall'] = {
  }
 
 //text blocks of Five Little Ducks
- Blockly.Blocks['rhyme_little_ducks'] = {
+
+Blockly.Blocks['rhyme_little_ducks'] = {
+    init: function() {
+        this.appendValueInput("count")
+        this.appendDummyInput("TEXT")
+            .appendField("little ducks went out one day",'TEXT');
+        this.setOutput(true, null);
+        this.setColour(65);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+}
+
+ Blockly.Blocks['rhyme_over_the_hills'] = {
   init: function() {
     this.appendDummyInput("TEXT")
         .appendField("Over the hills and far away",'TEXT');
-    this.setOutput(true, null);
-    this.setColour(65);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-}
-
-Blockly.Blocks['rhyme_over_the_hills'] = {
-  init: function() {
-    this.appendValueInput("count")
-    this.appendDummyInput("TEXT")
-        .appendField("little ducks went out one day",'TEXT');
     this.setOutput(true, null);
     this.setColour(65);
  this.setTooltip("");
@@ -380,13 +381,11 @@ Blockly.Blocks['duck_count'] = {
 
 Blockly.Blocks['set_variable'] = {
     init: function() {
-        this.appendDummyInput()
-            .appendField("Set")
-            .appendField(new Blockly.FieldVariable("number of ducks"), "number_of_ducks");
-        this.appendDummyInput()
-            .appendField("to");
         this.appendValueInput("variable_value")
-            .setCheck("Number");
+            .setCheck("Number")
+            .appendField("Set")
+            .appendField(new Blockly.FieldVariable("number of ducks"), "number_of_ducks")
+            .appendField("to");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
