@@ -381,13 +381,11 @@ Blockly.Blocks['duck_count'] = {
 
 Blockly.Blocks['set_variable'] = {
     init: function() {
-        this.appendDummyInput()
-            .appendField("Set")
-            .appendField(new Blockly.FieldVariable("number of ducks"), "number_of_ducks");
-        this.appendDummyInput()
-            .appendField("to");
         this.appendValueInput("variable_value")
-            .setCheck("Number");
+            .setCheck("Number")
+            .appendField("Set")
+            .appendField(new Blockly.FieldVariable("number of ducks"), "number_of_ducks")
+            .appendField("to");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
