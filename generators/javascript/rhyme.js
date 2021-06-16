@@ -195,6 +195,27 @@ Blockly.JavaScript['jingle_variable'] = function(block) {
 	var variable_variable_jingle = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('variable_jingle'), Blockly.Variables.NAME_TYPE);
 	return [variable_variable_jingle, Blockly.JavaScript.ORDER_NONE];
 };
+
+//text blocks for you know you are happy
+Blockly.JavaScript['rhyme_if_you_are_happy'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+Blockly.JavaScript['rhyme_face_show_it'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+Blockly.JavaScript['rhyme_clap'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+Blockly.JavaScript['rhyme_stomp'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+Blockly.JavaScript['rhyme_shout'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+};
   
 //nursery rhyme block
 Blockly.JavaScript['nursery_rhyme'] = function(block) {
