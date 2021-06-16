@@ -248,6 +248,50 @@ Blockly.Blocks['rhyme_open_sleigh'] = {
   }
 }
 
+Blockly.Blocks['rhyme_hey'] = {
+	init: function() {
+	  this.appendDummyInput("TEXT")
+		  .appendField("Hey",'TEXT');
+	  this.setOutput(true, null);
+	  this.setColour(65);
+   this.setTooltip("");
+   this.setHelpUrl("");
+	}
+};
+  
+Blockly.Blocks['jingle'] = {
+	init: function() {
+		this.appendDummyInput("variable_jingle")
+			.appendField(new Blockly.FieldVariable("jingle"), "variable_jingle")
+			.appendField("=");
+		this.appendValueInput("rhyme_1")
+			.setCheck("TEXT")
+			.setAlign(Blockly.ALIGN_CENTRE);
+		this.appendValueInput("rhyme_2")
+			.setCheck("TEXT");
+		this.appendValueInput("rhyme_3")
+			.setCheck("TEXT");
+		this.appendValueInput("rhyme_4")
+			.setCheck("TEXT");
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(330);
+	this.setTooltip("");
+	this.setHelpUrl("");
+	}
+};
+  
+Blockly.Blocks['jingle_variable'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldVariable("jingle"), "variable_jingle");
+		this.setOutput(true, null);
+		this.setColour(230);
+	this.setTooltip("");
+	this.setHelpUrl("");
+	}
+};
+
 //text blocks for "If you're happy and you know it"
 Blockly.Blocks['rhyme_if_you_are_happy'] = {
   init: function() {
@@ -483,25 +527,4 @@ Blockly.Blocks['variable_j'] = {
  this.setTooltip("");
  this.setHelpUrl("");
   }
-};
-
-Blockly.JavaScript['rhyme_hey'] = function(block) {
-  return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
-};
- 
-Blockly.JavaScript['jingle'] = function(block) {
-  Blockly.JavaScript.init(workspace);
-  var variable_variable_jingle = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('variable_jingle'), Blockly.Variables.NAME_TYPE);
-  var value_rhyme_1 = Blockly.JavaScript.valueToCode(block, 'rhyme_1', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_rhyme_2 = Blockly.JavaScript.valueToCode(block, 'rhyme_2', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_rhyme_3 = Blockly.JavaScript.valueToCode(block, 'rhyme_3', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_rhyme_4 = Blockly.JavaScript.valueToCode(block, 'rhyme_4', Blockly.JavaScript.ORDER_ATOMIC);
-
-  var code = 'var ' + variable_variable_jingle + '=' + value_rhyme_1 + '+' + value_rhyme_2 + '+' + value_rhyme_3 + '+' + value_rhyme_4 + ';\n';
-  return code;
-};
- 
-Blockly.JavaScript['jingle_variable'] = function(block) {
-  var variable_variable_jingle = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('variable_jingle'), Blockly.Variables.NAME_TYPE);
-  return [variable_variable_jingle, Blockly.JavaScript.ORDER_NONE];
 };
