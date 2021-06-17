@@ -399,6 +399,12 @@ function addBlockToWorkspace(blockDOM, do_update=true) {
 }
 
 function updateFlyout() {
+  //Hides editable text from screen reader
+  var editableBlocks = document.getElementsByClassName("blocklyEditableText");
+  for (var editableBlock of editableBlocks) {
+    editableBlock.setAttribute('aria-hidden', 'true');
+  }
+
   var navBar = document.getElementById('navBar');
   var curCategory = workspace.getToolbox().tree_.getChildren()
     .filter(child => child.styleName === navBar.getAttribute('curSelected'))[0];
