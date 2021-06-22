@@ -396,11 +396,10 @@ Blockly.Linearization.prototype.generateParentNav_ = function(rootNode) {
       this.blockJoiner.blockNode = null;
       blockNode.getLocation().dispose(true);
     })
-
     var duplicateItem = this.makeDuplicateItem_(this.blockJoiner.blockNode);
 
     // ...make into new stack item...
-    if (blockNode.prev() && blockNode.prev().prev()) {
+    //if (blockNode.prev() && blockNode.prev().prev()) {
       // if this has the ability to be mid-stack (unlike hat blocks)
       pNav.appendChild(deleteItem);
       pNav.appendChild(this.createElement('br'));
@@ -414,7 +413,7 @@ Blockly.Linearization.prototype.generateParentNav_ = function(rootNode) {
       if (duplicateItem) {
         pNav.appendChild(this.createElement('br'));
       }
-    }
+    //}
 
     // ...duplicate block item
     if (duplicateItem) {
@@ -960,7 +959,7 @@ Blockly.Linearization.prototype.makeParentItem_ = function(node) {
     // ***Requires Localization***
     labelText += this.blockJoiner.blockNode ? ' (move mode)' : ' (summary)';
   }
-  item.appendChild(document.createTextNode(labelText + ' > '));
+  item.appendChild(document.createTextNode(labelText + ' / '));
   if (node) {
     item.style.color = 'hsl(' + node.getLocation().getHue() + ', 40%, 40%)';
   }
