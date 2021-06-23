@@ -396,11 +396,10 @@ Blockly.Linearization.prototype.generateParentNav_ = function(rootNode) {
       this.blockJoiner.blockNode = null;
       blockNode.getLocation().dispose(true);
     })
-
     var duplicateItem = this.makeDuplicateItem_(this.blockJoiner.blockNode);
 
     // ...make into new stack item...
-    if (blockNode.prev() && blockNode.prev().prev()) {
+    //if (blockNode.prev() && blockNode.prev().prev()) {
       // if this has the ability to be mid-stack (unlike hat blocks)
       pNav.appendChild(deleteItem);
       pNav.appendChild(this.createElement('br'));
@@ -414,7 +413,7 @@ Blockly.Linearization.prototype.generateParentNav_ = function(rootNode) {
       if (duplicateItem) {
         pNav.appendChild(this.createElement('br'));
       }
-    }
+    //}
 
     // ...duplicate block item
     if (duplicateItem) {
@@ -960,7 +959,7 @@ Blockly.Linearization.prototype.makeParentItem_ = function(node) {
     // ***Requires Localization***
     labelText += this.blockJoiner.blockNode ? ' (move mode)' : ' (summary)';
   }
-  item.appendChild(document.createTextNode(labelText + ' > '));
+  item.appendChild(document.createTextNode(labelText + ' / '));
   if (node) {
     item.style.color = 'hsl(' + node.getLocation().getHue() + ', 40%, 40%)';
   }
@@ -1485,12 +1484,31 @@ Blockly.Linearization.getNestingBlockName = function(block) {
     'controls_for': 'for',
     'procedures_defnoreturn': 'function',
     'procedures_defreturn': 'function',
-    'controls_whileUntil': 'repeat while'
+    'controls_whileUntil': 'repeat while',
+    'nursery_rhyme' : 'nursery rhyme',
+    'repeat' : 'repeat',
+    'for_loop_increment_with_i' : 'count with i',
+    'for_loop_increment_with_j' : 'count with j'
   }
   if ((block.type === 'controls_whileUntil'
       && block.inputList[0].fieldRow[1].getText() === 'until')) {
     blockNames['controls_whileUntil'] = 'repeat until';
   }
+
+  if (block.type === 'repeat'){
+    var value_number_iterations = Blockly.JavaScript.valueToCode(block, 'number_iterations', Blockly.JavaScript.ORDER_ATOMIC)
+    blockNames['repeat'] = 'repeat ' + value_number_iterations + ' times do';
+  }
+
+  if (block.type === 'for_loop_increment_with_i' || block.type === 'for_loop_increment_with_j'){
+    Blockly.JavaScript.init(workspace);
+    var variable_iterated_variable = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('iterated_variable'), Blockly.Variables.NAME_TYPE);
+    var value_lower_bound = Blockly.JavaScript.valueToCode(block, 'lower_bound', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_upper_bound = Blockly.JavaScript.valueToCode(block, 'upper_bound', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_increment_by = Blockly.JavaScript.valueToCode(block, 'increment_by', Blockly.JavaScript.ORDER_ATOMIC);
+    blockNames['for_loop_increment_with_'+variable_iterated_variable] = 'count with ' + variable_iterated_variable + ' from ' + value_lower_bound + ' to ' + value_upper_bound + ' by ' + value_increment_by;
+  }
+
   return blockNames[block.type];
 };
 
