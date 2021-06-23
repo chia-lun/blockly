@@ -498,16 +498,16 @@ h1 {
 
   <h1>Blockly Playground</h1>
 
-  <xml id="toolbox-categories" style="display: none">
+  <xml id="toolbox-categories" style="display: none"> 
     <category name="Add blocks" categorystyle="Text blocks">
- 
       <block type="rhyme_say"></block>
       <block type="rhyme_if_you_are_happy"></block> 
       <block type="rhyme_face_show_it"></block> 
       <block type="rhyme_clap"></block> 
       <block type="rhyme_stomp"></block> 
       <block type="rhyme_shout"></block> 
-
+      <block type="for_loop_increment_with_i"></block>
+      <block type="variable_i"></block>
       <block type="controls_if"></block>
       <!-- <block type="controls_repeat_ext">
         <value name="TIMES">
@@ -522,6 +522,9 @@ h1 {
       <block type="logic_compare"></block>
       <block type="math_number"></block>
     </category>
+
+    <category name="Variables" categorystyle="variable_category" custom="VARIABLE"></category>
+    <category name="Functions" categorystyle="procedure_category" custom="PROCEDURE"></category>
   </xml>
 
   <block id="nursery_rhyme" type="nursery_rhyme" deletable="false" class="start_blocks"></block>
@@ -533,7 +536,10 @@ h1 {
   <block type="rhyme_clap"></block> 
   <block type="rhyme_stomp"></block> 
   <block type="rhyme_shout"></block> 
-
+  <block type="for_loop_increment_with_i"></block>
+  <block type="variable_i"></block>
+  <category name="Variables" categorystyle="variable_category" custom="VARIABLE"></category>
+  <category name="Functions" categorystyle="procedure_category" custom="PROCEDURE"></category>
   <!--<block type="variables_set" id="start_verse_Set" deletable="false" editable="false" class="start_blocks">
     <field name="VAR" variabletype="">verse</field>
     <value name="VALUE">

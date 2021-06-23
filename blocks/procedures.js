@@ -43,6 +43,8 @@ Blockly.Blocks['procedures_defnoreturn'] = {
         .appendField(Blockly.Msg['PROCEDURES_DEFNORETURN_TITLE'])
         .appendField(nameField, 'NAME')
         .appendField('', 'PARAMS');
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setMutator(new Blockly.Mutator(['procedures_mutatorarg']));
     if ((this.workspace.options.comments ||
          (this.workspace.options.parentWorkspace &&

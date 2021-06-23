@@ -257,7 +257,7 @@ Blockly.Blocks['rhyme_hey'] = {
    this.setTooltip("");
    this.setHelpUrl("");
 	}
-};
+}
   
 Blockly.Blocks['jingle'] = {
 	init: function() {
@@ -279,7 +279,7 @@ Blockly.Blocks['jingle'] = {
 	this.setTooltip("");
 	this.setHelpUrl("");
 	}
-};
+}
   
 Blockly.Blocks['jingle_variable'] = {
 	init: function() {
