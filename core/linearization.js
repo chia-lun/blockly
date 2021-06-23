@@ -542,7 +542,7 @@ Blockly.Linearization.prototype.makeBlockList_ = function(node, rootBlock) {
         var bodyNode =
             Blockly.ASTNode.createConnectionNode(branch.bodyConnection);
         if (Blockly.Linearization.checkConnection(bodyNode,
-            this.blockJoiner.blockNode)) {
+            this.blockJoiner.blockNode.prev())) {
           var text = 'Insert within ' + branch.text;
           body.appendChild(this.makeConnectionItem_(bodyNode, text));
         }
@@ -795,11 +795,11 @@ Blockly.Linearization.prototype.makeMutatorList_ = function(node) {
 
   if (block.elseifCount_ !== undefined) {
     // ***Requires Localization***
-    list.push(this.makeMutatorItem_(node, 'Add elseif', incrAttr('elseif')));
+    list.push(this.makeMutatorItem_(node, 'Add else if', incrAttr('elseif')));
 
     if (block.elseifCount_ > 0) {
       // ***Requires Localization***
-      list.push(this.makeMutatorItem_(node, 'Remove elseif',
+      list.push(this.makeMutatorItem_(node, 'Remove else if',
           decrAttr('elseif')));
     }
   }
