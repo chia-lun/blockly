@@ -54,11 +54,11 @@ Blockly.JavaScript['rhyme_humpty_dumpty_great_fall'] = function(block) {
 }
 
 Blockly.JavaScript['rhyme_king_hourse_man'] = function(block) {
-	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+	return ["\"" + block.getFieldValue('TEXT') + "\"", Blockly.JavaScript.ORDER_ATOMIC];
 }
 
 Blockly.JavaScript['rhyme_could_not_put_together'] = function(block) {
-	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ADDITION];
+	return ["\"" + block.getFieldValue('TEXT') + "\"", Blockly.JavaScript.ORDER_ADDITION];
 }
 
 //text blocks of Five Little Ducks
