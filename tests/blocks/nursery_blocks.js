@@ -108,7 +108,7 @@ Blockly.Blocks['rhyme_humpty_dumpty_sat_on_a_wall'] = {
  Blockly.Blocks['rhyme_could_not_put_together'] = {
   init: function() {
     this.appendDummyInput("TEXT")
-        .appendField("Couldnt put Humpty together again",'TEXT');
+        .appendField("Could not put Humpty together again",'TEXT');
     this.setOutput(true, null);
     this.setColour(20);
  this.setTooltip("");
