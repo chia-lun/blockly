@@ -88,7 +88,7 @@
 var workspace = null;
 
 function start() {
-  setBackgroundColour();
+  //setBackgroundColour();
 
   // Parse the URL arguments.
   var match = location.search.match(/dir=([^&]+)/);
@@ -253,7 +253,7 @@ function getToolboxElement() {
 }
 
 function injectToolbox(container) {
-  var headingTag = document.createElement('H2');
+  var headingTag = document.createElement('H1');
   var text = document.createTextNode('Toolbox');
   headingTag.appendChild(text);
   container.appendChild(headingTag);
@@ -555,7 +555,7 @@ h1 {
 
 
   <!-- Mac students added this code -->
-  <span aria-label="Buffer from linearization controls to web controls"></span> 
+  <!--<span aria-label="Buffer from linearization controls to web controls"></span>
   <label for="Font size">Font size</label>
   <input type="range" role="slider" 
     min="8"
@@ -565,8 +565,8 @@ h1 {
     aria-valuemin="8"
     aria-valuemax="36"
     aria-valuenow="14"
-    oninput="updateFontSize(value)">
-  <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">SPEAK TEXT</button>
+    oninput="updateFontSize(value)">-->
+  <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
   <p id='parentNav'></p>
   <ul id='mainNavList'><ul>
   <!-- Mac students added this code -->

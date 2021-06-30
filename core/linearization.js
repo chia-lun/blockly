@@ -367,6 +367,9 @@ Blockly.Linearization.prototype.generateParentNav_ = function(rootNode) {
         .forEach(elem => pNav.appendChild(elem));
   }
 
+  var labelText = pNav.childNodes[pNav.childNodes.length - 1].textContent;
+  pNav.childNodes[pNav.childNodes.length - 1].setAttribute('aria-label', 'Currently on ' + labelText);
+
   // add movement options...
   // ...cancel move item...
   var blockNode = this.blockJoiner.blockNode;
@@ -592,7 +595,7 @@ Blockly.Linearization.prototype.makeBlockList_ = function(node, rootBlock) {
  */
 Blockly.Linearization.prototype.makeBlockSpecificView_ = function(rootNode) {
   var sublist = this.createElement('ul');
-  sublist.appendChild(this.makeGoBackItem_(rootNode));
+  //sublist.appendChild(this.makeGoBackItem_(rootNode));
 
   var showOnBranch = !this.selected.branch || !this.selected.branch.key;
   if (showOnBranch && !rootNode.getLocation().isShadow()) {
@@ -752,7 +755,7 @@ Blockly.Linearization.prototype.makeInnerInputList_ = function(rootNode) {
         return 'Replace ' + source.makeAriaLabel();
       }
       // ***Requires Localization***
-      return 'Tack on side' + (inlines <= 1 ? '' : ' ' + tracker.tackVal++);
+      return 'Insert inline' + (inlines <= 1 ? '' : ' ' + tracker.tackVal++);
     },
     insertText: function(n) {
       // ***Requires Localization***
@@ -964,7 +967,7 @@ Blockly.Linearization.prototype.makeParentItem_ = function(node) {
     item.style.color = 'hsl(' + node.getLocation().getHue() + ', 40%, 40%)';
   }
   // ***Requires Localization***
-  item.setAttribute('aria-label', 'Jump to ' + labelText);
+  item.setAttribute('aria-label', 'Navigate to ' + labelText);
   item.addEventListener('click', e => this.listItemOnclick_(node));
   return item;
 };
@@ -1305,7 +1308,7 @@ Blockly.Linearization.prototype.makeReturnItem_ = function(rootNode) {
  */
 Blockly.Linearization.prototype.makeMoveItem_ = function(node) {
   // ***Requires Localization***
-  var text = this.blockJoiner.blockNode ? 'Move me instead' :
+  var text = this.blockJoiner.blockNode ? '' :
       'Move me and blocks below';
   var element = this.makeTextItem(text);
   element.addEventListener('click', e => this.moveItemOnclick_(node, e));

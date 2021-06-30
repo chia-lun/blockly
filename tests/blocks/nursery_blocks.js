@@ -372,7 +372,7 @@ Blockly.Blocks['repeat'] = {
 Blockly.Blocks['nursery_rhyme'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("Nursery Rhyme");
+            .appendField("When Play is clicked");
         this.appendStatementInput("nursery_rhyme")
             .setCheck(null);
         this.setColour(230);
