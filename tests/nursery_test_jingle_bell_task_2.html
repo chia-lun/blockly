@@ -502,22 +502,53 @@ h1 {
 
   <div id="blocklyDiv"></div>
 
-  <h1>Blockly Playground</h1>
+  <!-- <h1>Blockly Playground</h1> -->
+
+  <block id="nursery_rhyme" type="nursery_rhyme" deletable="false" class="start_blocks">
+    <statement name = "nursery_rhyme">
+      <block type="rhyme_say">
+        <value name="TEXT">
+          <block type="rhyme_jingle_bells">
+          </block>
+        </value>
+        <next>
+          <block type="rhyme_say">
+            <value name="TEXT">
+              <block type="rhyme_open_sleigh">
+              </block>
+            </value>
+            <next>
+              <block type="rhyme_say">
+                <value name="TEXT">
+                  <block type="rhyme_fun_to_ride">
+                  </block>
+                </value>
+                <next>
+                  <block type="rhyme_say">
+                    <value name="TEXT">
+                      <block type="rhyme_all_the_way">
+                      </block>
+                    </value>
+                </next>
+            </next>
+        </next>
+      </block>
+    </statement>
+  </block>
 
   <xml id="toolbox-categories" style="display: none">
-    <category name="Add blocks" categorystyle="Text blocks">
- 
-      <block type="rhyme_say"></block>
+    <category name="Lyrics" categorystyle="categories">
+      <!-- <block type="rhyme_say"></block> -->
       <block type="jingle"></block>
-      <block type="jingle_variable"></block>
+      <!-- <block type="jingle_variable"></block> -->
       <block type="rhyme_jingle_bells"></block>
       <block type="rhyme_all_the_way"></block>
       <block type="rhyme_fun_to_ride"></block>
       <block type="rhyme_open_sleigh"></block>
       <block type="rhyme_hey"></block>
-      <block type="for_loop_increment_with_i"></block>
-      <block type="variable_i"></block>
-      <block type="controls_if"></block>
+      <!-- <block type="for_loop_increment_with_i"></block> -->
+      <!-- <block type="variable_i"></block> -->
+      <!-- <block type="controls_if"></block> -->
       <!-- <block type="repeat"></block> -->
       <!-- <block type="controls_if"></block> -->
       <!-- <block type="controls_repeat_ext">
@@ -530,12 +561,35 @@ h1 {
       <!-- <block type="variables_get">
         <field name="VAR">verse</field>
       </block> -->
+      <!-- <block type="logic_compare"></block> -->
+      <!-- <block type="math_number"></block> -->
+    </category>
+
+    <category name="Commands" categorystyle="categories">
+      <block type="rhyme_say"></block>
+      <block type="for_loop_increment_with_i"></block>
+      <block type="controls_if"></block>
       <block type="logic_compare"></block>
+
+      <block type="repeat">
+        <value name = "number_iterations">
+          <shadow type = "math_number">
+            <field name = "NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type="new_set_variable_test_1"></block>
+    </category>
+
+    <category name="Variables" categorystyle="categories">
+      <block type="jingle_variable"></block>
+      <block type="variable_i"></block>
       <block type="math_number"></block>
     </category>
   </xml>
 
-  <block id="nursery_rhyme" type="nursery_rhyme" deletable="false" class="start_blocks"></block>
+  <!-- <block id="nursery_rhyme" type="nursery_rhyme" deletable="false" class="start_blocks"></block> -->
   <block type="rhyme_say"></block>
   <block type="rhyme_say"></block>
   <block type="rhyme_say"></block>
