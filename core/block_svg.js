@@ -191,7 +191,7 @@ Blockly.BlockSvg.prototype.makeAriaLabel = function() {
         var targetBlock = input.connection.targetConnection.getSourceBlock();
         lab += targetBlock.makeAriaLabel() + ' ';
       } else {
-        lab += 'NOTHING ';
+        lab += 'BLANK ';
       }
     }
   }

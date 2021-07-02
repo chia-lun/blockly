@@ -180,6 +180,7 @@ function start() {
   //var verse_set_block = document.getElementById("start_verse_Set");
   addBlockToWorkspace(nursery_rhyme_block, false);
   //addBlockToWorkspace(verse_set_block, false);
+  hideBlocksFromScreenReader();
 }
 
 /**
@@ -399,16 +400,25 @@ function addBlockToWorkspace(blockDOM, do_update=true) {
 }
 
 function updateFlyout() {
+  hideBlocksFromScreenReader()
+
+  var navBar = document.getElementById('navBar');
+  var curCategory = workspace.getToolbox().tree_.getChildren()
+    .filter(child => child.styleName === navBar.getAttribute('curSelected'))[0];
+  popFlyout(curCategory);
+}
+
+function hideBlocksFromScreenReader(){
   //Hides editable text from screen reader
   var editableBlocks = document.getElementsByClassName("blocklyEditableText");
   for (var editableBlock of editableBlocks) {
     editableBlock.setAttribute('aria-hidden', 'true');
   }
 
-  var navBar = document.getElementById('navBar');
-  var curCategory = workspace.getToolbox().tree_.getChildren()
-    .filter(child => child.styleName === navBar.getAttribute('curSelected'))[0];
-  popFlyout(curCategory);
+  var editableBlocks = document.getElementsByClassName("blocklyPath");
+  for (var editableBlock of editableBlocks) {
+    editableBlock.setAttribute('aria-hidden', 'true');
+  }
 }
 
 function updateFontSize(value) {
