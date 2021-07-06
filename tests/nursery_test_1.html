@@ -459,8 +459,8 @@ h1 {
 }
 #blocklyDiv {
   float: right;
-  height: 95%;
-  width: 70%;
+  height: 100%;
+  width: 100%;
 }
 #importExport {
   font-family: monospace;
@@ -506,70 +506,90 @@ h1 {
   max-width: 100%;
 }
 
+.grid-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  grid-gap: 20px;
+}
+
 </style>
 </head>
 <body onload="start()">
 
-  <div id="blocklyDiv"></div>
+<div class="grid-container">
 
-  <h1>Blockly Playground</h1>
+  <div class="grid-child left">
+    <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
+    <p id='parentNav'></p>
+    <ul id='mainNavList'><ul>
+  </div>
 
-  <block id="nursery_rhyme" type="nursery_rhyme" deletable="false" class="start_blocks"></block>
-  <xml id="toolbox-categories" style="display: none">
-    <category name="Add blocks" categorystyle="Text blocks">
+  <div class="grid-child right">
+    <div id="blocklyDiv"></div>
 
-      <block type="rhyme_say"></block>
-      <block type="rhyme_humpty_dumpty_sat_on_a_wall"></block>
-      <block type="rhyme_humpty_dumpty_great_fall"></block>
-      <block type="rhyme_king_hourse_man"></block>
-      <block type="rhyme_could_not_put_together"></block>
-      <!-- <block type="rhyme_little_ducks"></block>
-      <block type="rhyme_over_the_hills"></block>
-      <block type="rhyme_mother_duck"></block>
-      <block type="rhyme_little_duck_back"></block> -->
-      <!-- <block type="controls_if"></block> -->
-      <block type="repeat"></block>
-      <!-- <block type="controls_if"></block> -->
-      <!-- <block type="controls_repeat_ext">  -->
+
+    <block id="nursery_rhyme" type="nursery_rhyme" deletable="false" class="start_blocks"></block>
+    <xml id="toolbox-categories" style="display: none">
+      <category name="Add blocks" categorystyle="Text blocks">
+
+        <block type="rhyme_say"></block>
+        <block type="rhyme_humpty_dumpty_sat_on_a_wall"></block>
+        <block type="rhyme_humpty_dumpty_great_fall"></block>
+        <block type="rhyme_king_hourse_man"></block>
+        <block type="rhyme_could_not_put_together"></block>
+        <!-- <block type="rhyme_little_ducks"></block>
+        <block type="rhyme_over_the_hills"></block>
+        <block type="rhyme_mother_duck"></block>
+        <block type="rhyme_little_duck_back"></block> -->
+        <!-- <block type="controls_if"></block> -->
+        <block type="repeat"></block>
+        <!-- <block type="controls_if"></block> -->
+        <!-- <block type="controls_repeat_ext">  -->
         <!-- <value name="TIMES"> -->
-          <!-- <shadow type="math_number"> -->
-            <!-- <field name="NUM">2</field> -->
-          <!-- </shadow> -->
+        <!-- <shadow type="math_number"> -->
+        <!-- <field name="NUM">2</field> -->
+        <!-- </shadow> -->
         <!-- </value> -->
-      <!-- </block> -->
-      <block type="new_set_variable_test_1"></block>
-      <block type="verse_count"></block>
-      <!-- <block type="variables_get">
-        <field name="VAR">verse</field>
-      </block> -->
-      <!-- <block type="logic_compare"></block> -->
-      <block type="math_number"></block>
-    </category>
-  </xml>
+        <!-- </block> -->
+        <block type="new_set_variable_test_1"></block>
+        <block type="verse_count"></block>
+        <!-- <block type="variables_get">
+          <field name="VAR">verse</field>
+        </block> -->
+        <!-- <block type="logic_compare"></block> -->
+        <block type="math_number"></block>
+      </category>
+    </xml>
 
 
-  <block type="rhyme_say"></block>
-  <block type="rhyme_say"></block>
-  <block type="rhyme_say"></block>
-  <block type="rhyme_humpty_dumpty_sat_on_a_wall"></block>
-  <block type="rhyme_humpty_dumpty_great_fall"></block>
-  <block type="rhyme_king_hourse_man"></block>
-  <block type="rhyme_could_not_put_together"></block>
-  <!--<block type="rhyme_little_ducks"></block>
-  <block type="rhyme_over_the_hills"></block>
-  <block type="rhyme_mother_duck"></block>
-  <block type="rhyme_little_duck_back"></block>-->
-  <block type="repeat"></block>
-  <block type="new_set_variable_test_1"></block>
-  <block type="verse_count"></block>
-  <!-- <block type="variables_set" id="start_verse_Set" deletable="false" editable="false" class="start_blocks">
-    <field name="VAR" variabletype="">verse</field>
-    <value name="VALUE">
-      <block type="math_number" deletable="false">
-        <field name="NUM">1</field>
-      </block>
-    </value>
-  </block> -->
+    <block type="rhyme_say"></block>
+    <block type="rhyme_say"></block>
+    <block type="rhyme_say"></block>
+    <block type="rhyme_humpty_dumpty_sat_on_a_wall"></block>
+    <block type="rhyme_humpty_dumpty_great_fall"></block>
+    <block type="rhyme_king_hourse_man"></block>
+    <block type="rhyme_could_not_put_together"></block>
+    <!--<block type="rhyme_little_ducks"></block>
+    <block type="rhyme_over_the_hills"></block>
+    <block type="rhyme_mother_duck"></block>
+    <block type="rhyme_little_duck_back"></block>-->
+    <block type="repeat"></block>
+    <block type="new_set_variable_test_1"></block>
+    <block type="verse_count"></block>
+    <!-- <block type="variables_set" id="start_verse_Set" deletable="false" editable="false" class="start_blocks">
+      <field name="VAR" variabletype="">verse</field>
+      <value name="VALUE">
+        <block type="math_number" deletable="false">
+          <field name="NUM">1</field>
+        </block>
+      </value>
+    </block> -->
+  </div>
+
+</div>
+
+
 
 
   <!-- Mac students added this code -->
@@ -584,9 +604,7 @@ h1 {
     aria-valuemax="36"
     aria-valuenow="14"
     oninput="updateFontSize(value)">-->
-  <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
-  <p id='parentNav'></p>
-  <ul id='mainNavList'><ul>
+
   <!-- Mac students added this code -->
 </body>
 </html>

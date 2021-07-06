@@ -459,8 +459,8 @@ h1 {
 }
 #blocklyDiv {
   float: right;
-  height: 95%;
-  width: 70%;
+  height: 100%;
+  width: 100%;
 }
 #importExport {
   font-family: monospace;
@@ -506,64 +506,84 @@ h1 {
   max-width: 100%;
 }
 
+.grid-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  grid-gap: 20px;
+}
+
 </style>
 </head>
 <body onload="start()">
 
-  <div id="blocklyDiv"></div>
+<div class="grid-container">
 
-  <h1>Blockly Playground</h1>
+  <div class="grid-child left">
+    <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
+    <p id='parentNav'></p>
+    <ul id='mainNavList'><ul>
+  </div>
 
-  <xml id="toolbox-categories" style="display: none"> 
-    <category name="Add blocks" categorystyle="Text blocks">
-      <block type="rhyme_say"></block>
-      <block type="rhyme_if_you_are_happy"></block> 
-      <block type="rhyme_face_show_it"></block> 
-      <block type="rhyme_clap"></block> 
-      <block type="rhyme_stomp"></block> 
-      <block type="rhyme_shout"></block> 
-      <block type="for_loop_increment_with_i"></block>
-      <block type="variable_i"></block>
-      <block type="controls_if"></block>
-      <!-- <block type="controls_repeat_ext">
-        <value name="TIMES">
-          <shadow type="math_number">
-            <field name="NUM">2</field>
-          </shadow>
-        </value>
-      </block> -->
-      <block type="variables_get">
-        <field name="VAR">verse</field>
-      </block>
-      <block type="logic_compare"></block>
-      <block type="math_number"></block>
-    </category>
+  <div class="grid-child right">
+    <div id="blocklyDiv"></div>
 
+
+    <xml id="toolbox-categories" style="display: none">
+      <category name="Add blocks" categorystyle="Text blocks">
+        <block type="rhyme_say"></block>
+        <block type="rhyme_if_you_are_happy"></block>
+        <block type="rhyme_face_show_it"></block>
+        <block type="rhyme_clap"></block>
+        <block type="rhyme_stomp"></block>
+        <block type="rhyme_shout"></block>
+        <block type="for_loop_increment_with_i"></block>
+        <block type="variable_i"></block>
+        <block type="controls_if"></block>
+        <!-- <block type="controls_repeat_ext">
+          <value name="TIMES">
+            <shadow type="math_number">
+              <field name="NUM">2</field>
+            </shadow>
+          </value>
+        </block> -->
+        <block type="variables_get">
+          <field name="VAR">verse</field>
+        </block>
+        <block type="logic_compare"></block>
+        <block type="math_number"></block>
+      </category>
+
+      <category name="Variables" categorystyle="variable_category" custom="VARIABLE"></category>
+      <category name="Functions" categorystyle="procedure_category" custom="PROCEDURE"></category>
+    </xml>
+
+    <block id="nursery_rhyme" type="nursery_rhyme" deletable="false" class="start_blocks"></block>
+    <block type="rhyme_say"></block>
+    <block type="rhyme_say"></block>
+    <block type="rhyme_say"></block>
+    <block type="rhyme_if_you_are_happy"></block>
+    <block type="rhyme_face_show_it"></block>
+    <block type="rhyme_clap"></block>
+    <block type="rhyme_stomp"></block>
+    <block type="rhyme_shout"></block>
+    <block type="for_loop_increment_with_i"></block>
+    <block type="variable_i"></block>
     <category name="Variables" categorystyle="variable_category" custom="VARIABLE"></category>
     <category name="Functions" categorystyle="procedure_category" custom="PROCEDURE"></category>
-  </xml>
+    <!--<block type="variables_set" id="start_verse_Set" deletable="false" editable="false" class="start_blocks">
+      <field name="VAR" variabletype="">verse</field>
+      <value name="VALUE">
+        <block type="math_number" deletable="false">
+          <field name="NUM">1</field>
+        </block>
+      </value>
+    </block>-->
+  </div>
 
-  <block id="nursery_rhyme" type="nursery_rhyme" deletable="false" class="start_blocks"></block>
-  <block type="rhyme_say"></block>
-  <block type="rhyme_say"></block>
-  <block type="rhyme_say"></block>
-  <block type="rhyme_if_you_are_happy"></block> 
-  <block type="rhyme_face_show_it"></block> 
-  <block type="rhyme_clap"></block> 
-  <block type="rhyme_stomp"></block> 
-  <block type="rhyme_shout"></block> 
-  <block type="for_loop_increment_with_i"></block>
-  <block type="variable_i"></block>
-  <category name="Variables" categorystyle="variable_category" custom="VARIABLE"></category>
-  <category name="Functions" categorystyle="procedure_category" custom="PROCEDURE"></category>
-  <!--<block type="variables_set" id="start_verse_Set" deletable="false" editable="false" class="start_blocks">
-    <field name="VAR" variabletype="">verse</field>
-    <value name="VALUE">
-      <block type="math_number" deletable="false">
-        <field name="NUM">1</field>
-      </block>
-    </value>
-  </block>-->
+</div>
+
+
 
 
   <!-- Mac students added this code -->
@@ -578,9 +598,7 @@ h1 {
     aria-valuemax="36"
     aria-valuenow="14"
     oninput="updateFontSize(value)">-->
-  <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
-  <p id='parentNav'></p>
-  <ul id='mainNavList'><ul>
+
   <!-- Mac students added this code -->
 </body>
 </html>
