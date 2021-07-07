@@ -437,9 +437,12 @@ function handleSpeakPress() {
   console.log(nursery_rhyme_block);
   var code = Blockly.JavaScript.statementToCode(nursery_rhyme_block, 'nursery_rhyme')
   eval(code);
-  var correctAnswer = "  var iterations = 2\n" +
-      "  ;for(var i = 0; i < iterations; i++){  window.speechSynthesis.speak(new SpeechSynthesisUtterance('London Bridge is falling down'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('Falling down'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('Falling down'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('London Bridge is falling down'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('My fair lady'));\n" +
-      "  }"
+  var correctAnswer = "  for(var i =0;i <2; i +=1){i= i;  window.speechSynthesis.speak(new SpeechSynthesisUtterance('London Bridge is'));if (i == 0) {\n" +
+      "      for(var j =0;j <3; j +=1){j= j;  window.speechSynthesis.speak(new SpeechSynthesisUtterance('Falling down'));;}\n" +
+      "    } else {\n" +
+      "      window.speechSynthesis.speak(new SpeechSynthesisUtterance('Falling down'));}\n" +
+      "  ;}\n" +
+      "  window.speechSynthesis.speak(new SpeechSynthesisUtterance('My fair lady'));"
   var result = ""
   if (code === correctAnswer){
       result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Excellent, this is correct! Lets move on to the next task.\'));'
