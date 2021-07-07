@@ -437,15 +437,13 @@ function handleSpeakPress() {
   console.log(nursery_rhyme_block);
   var code = Blockly.JavaScript.statementToCode(nursery_rhyme_block, 'nursery_rhyme')
   eval(code);
-  var correctAnswer = "  var iterations = 2\n" +
-      "  ;for(var i = 0; i < iterations; i++){  window.speechSynthesis.speak(new SpeechSynthesisUtterance('London Bridge is falling down'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('Falling down'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('Falling down'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('London Bridge is falling down'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('My fair lady'));\n" +
-      "  }"
+  var correctAnswer = "  window.speechSynthesis.speak(new SpeechSynthesisUtterance('If you are happy and you know it'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('clap your hands'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('If you are happy and you know it'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('clap your hands'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('If you are happy and you know it'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('Then your face will surely show it'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('If you are happy and you know it'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('clap your hands'));"
   var result = ""
   if (code === correctAnswer){
       result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Excellent, this is correct! Lets move on to the next task.\'));'
   }
   else {
-      result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Hmm, seems like this is not quite right. Remember what you did in Task 6. Do you notice anything wrong within the for loop block?\'));'
+      result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Hmm, seems like this is not quite right. Try changing up the orders of the blocks!\'));'
   }
   eval(result)
   // } catch(e) {
