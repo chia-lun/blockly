@@ -173,7 +173,7 @@ this.setHelpUrl("");
 Blockly.Blocks['rhyme_london_bridge'] = {
   init: function() {
     this.appendDummyInput("TEXT")
-        .appendField("London Bridge is falling down",'TEXT');
+        .appendField("London Bridge is",'TEXT');
     this.setOutput(true, null);
     this.setColour(230);
  this.setTooltip("");
