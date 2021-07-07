@@ -439,7 +439,7 @@ function handleSpeakPress() {
   // try {
   var code = Blockly.JavaScript.statementToCode(nursery_rhyme_block, 'nursery_rhyme')
   eval(code);
-  var correctAnswer = "  window.speechSynthesis.speak(new SpeechSynthesisUtterance('London Bridge is falling down'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('Falling down'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('Falling down'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('London Bridge is falling down'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('My fair lady'));"
+  var correctAnswer = "  window.speechSynthesis.speak(new SpeechSynthesisUtterance('London Bridge is'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('Falling down'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('Falling down'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('Falling down'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('London Bridge is'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('Falling down'));window.speechSynthesis.speak(new SpeechSynthesisUtterance('My fair lady'));"
   var result = ""
   if (code === correctAnswer){
     result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Excellent, this is correct! Lets move on to the next task.\'));'
