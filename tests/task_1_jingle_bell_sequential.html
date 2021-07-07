@@ -109,6 +109,7 @@ function start() {
   // Create main workspace.
   workspace = Blockly.inject('blocklyDiv',
       {
+        trashcan: false,
         comments: true,
         collapse: true,
         disable: true,
@@ -127,7 +128,7 @@ function start() {
         readOnly: false,
         rtl: rtl,
         move: {
-          scrollbars: true,
+          scrollbars: false,
           drag: true,
           wheel: false,
         },
@@ -135,7 +136,7 @@ function start() {
         toolboxPosition: side == 'top' || side == 'start' ? 'start' : 'end',
         zoom:
           {
-            controls: true,
+            controls: false,
             wheel: true,
             startScale: 1.0,
             maxScale: 4,
@@ -453,6 +454,11 @@ function handleSpeakPress() {
   // }
 }
 
+function speakCorrectVersion() {
+  var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Jingle bells, jingle bells Jingle all the way. Oh, what fun it is to ride. In a one horse open sleigh!\'));'
+  eval(result);
+}
+
 </script>
 
 <style>
@@ -533,7 +539,7 @@ h1 {
   <div class="grid-child left">
     <h1>Task 1 - Instructions</h1>
     <p>Here’s what we built for Jingle Bells, but we are missing a line of lyrics. Please listen to Jingle Bells and help us place the last block: </p>
-    <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Listen to Jingle Bells</button>
+    <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="handleSpeakPress()">Listen to Jingle Bells</button>
     <p>When you are ready, tap on the PLAY button to see how you did! </p>
     <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
 

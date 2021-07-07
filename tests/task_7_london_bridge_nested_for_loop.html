@@ -109,6 +109,7 @@ function start() {
   // Create main workspace.
   workspace = Blockly.inject('blocklyDiv',
       {
+        trashcan: false,
         comments: true,
         collapse: true,
         disable: true,
@@ -127,7 +128,7 @@ function start() {
         readOnly: false,
         rtl: rtl,
         move: {
-          scrollbars: true,
+          scrollbars: false,
           drag: true,
           wheel: false,
         },
@@ -135,7 +136,7 @@ function start() {
         toolboxPosition: side == 'top' || side == 'start' ? 'start' : 'end',
         zoom:
           {
-            controls: true,
+            controls: false,
             wheel: true,
             startScale: 1.0,
             maxScale: 4,

@@ -661,12 +661,12 @@ Blockly.WorkspaceSvg.prototype.newBlock = function(prototypeName, opt_id) {
  * Add a trashcan.
  * @package
  */
-Blockly.WorkspaceSvg.prototype.addTrashcan = function() {
-  /** @type {Blockly.Trashcan} */
-  this.trashcan = new Blockly.Trashcan(this);
-  var svgTrashcan = this.trashcan.createDom();
-  this.svgGroup_.insertBefore(svgTrashcan, this.svgBlockCanvas_);
-};
+// Blockly.WorkspaceSvg.prototype.addTrashcan = function() {
+//   /** @type {Blockly.Trashcan} */
+//   this.trashcan = new Blockly.Trashcan(this);
+//   var svgTrashcan = this.trashcan.createDom();
+//   this.svgGroup_.insertBefore(svgTrashcan, this.svgBlockCanvas_);
+// };
 
 /**
  * Add zoom controls.
