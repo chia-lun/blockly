@@ -436,7 +436,18 @@ function handleSpeakPress() {
   var nursery_rhyme_block = workspace.getBlockById("nursery_rhyme");
   console.log(nursery_rhyme_block);
   // try {
-    eval(Blockly.JavaScript.statementToCode(nursery_rhyme_block, 'nursery_rhyme'));
+  var code = Blockly.JavaScript.statementToCode(nursery_rhyme_block, 'nursery_rhyme')
+  eval(code);
+  var correctAnswer = '  window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Jingle bells, jingle bells\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Jingle all the way\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Oh, what fun it is to ride\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'In a one horse open sleigh\'));';
+  if (code === correctAnswer){
+    var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Excellent, this is correct! Lets move on to the next task.\'));'
+    eval(result);
+  }
+  else {
+    var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Hmm, seems like this is not quite right. Try moving the block to a different spot!\'));'
+    eval(result);
+  }
+
   // } catch(e) {
     // alert(e);
   // }
