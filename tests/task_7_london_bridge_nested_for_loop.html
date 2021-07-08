@@ -453,6 +453,11 @@ function handleSpeakPress() {
   // }
 }
 
+function speakCorrectVersion() {
+  var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'London Bridge is falling down, falling down, falling down. London Bridge is falling down, falling down, falling down. London Bridge is falling down, falling down, falling down.\'));'
+  eval(result);
+}
+
 </script>
 
 <style>
@@ -532,7 +537,7 @@ h1 {
     <div class="grid-child left">
         <h1>Task 7 - Instructions</h1>
         <p>Great job! Now we are moving on to something more complicated. We are trying to put a for loop within a for loop. But we need your help to fix the blocks and match the song!</p>
-        <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Listen to London Bridge</button>
+        <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="speakCorrectVersion()">Listen to London Bridge</button>
         <p>What is wrong? Could you help us fix it? When you are ready, tap on the PLAY button to see how you did!</p>
         <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
 

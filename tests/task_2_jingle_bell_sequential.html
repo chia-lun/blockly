@@ -453,6 +453,11 @@ function handleSpeakPress() {
   // }
 }
 
+function speakCorrectVersion() {
+  var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Jingle bells, jingle bells Jingle all the way. Oh, what fun it is to ride. In a one horse open sleigh!\'));'
+  eval(result);
+}
+
 </script>
 
 <style>
@@ -533,7 +538,7 @@ h1 {
   <div class="grid-child left">
     <h1>Task 2 - Instructions</h1>
     <p>Oops, we accidentally messed up the order of Jingle Bells! Could you help us find the blocks that are out of place?</p>
-    <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Listen to Jingle Bells</button>
+    <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="handleSpeakPress()">Listen to Jingle Bells</button>
     <p>Try dragging the blocks and replacing them in order. When you are ready, tap on the PLAY button to see how you did!</p>
     <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
 

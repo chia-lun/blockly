@@ -453,6 +453,11 @@ function handleSpeakPress() {
   // }
 }
 
+function speakCorrectVersion() {
+  var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'London Bridge is falling down, falling down, falling down. London Bridge is falling down. My fair lady.\'));'
+  eval(result);
+}
+
 </script>
 
 <style>
@@ -533,7 +538,7 @@ h1 {
   <div class="grid-child left">
     <h1>Task 3 - Instructions</h1>
     <p>Here’s what we built for London Bridge. Similarly, we are also missing a line of lyrics. Please listen to London Bridge and help us place the last block:</p>
-    <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Listen to London Bridge</button>
+    <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="speakCorrectVersion()">Listen to London Bridge</button>
     <p> When you are ready, tap on the PLAY button to see how you did!</p>
     <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
 

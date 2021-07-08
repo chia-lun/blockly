@@ -456,6 +456,11 @@ function handleSpeakPress() {
   // }
 }
 
+function speakCorrectVersion() {
+  var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'If your happy and you know it, clap your hands. If your happy and you know it, clap your hands. If your happy and you know it, and you really want to show it. If your happy and you know it, clap your hands. \'));'
+  eval(result);
+}
+
 </script>
 
 <style>
@@ -536,7 +541,7 @@ h1 {
         <h1>Task 12 - Instructions</h1>
         <p> Now it’s time to add in an if statement! We simplified the last task to implement the for loop, but now we want to match the original version of If You’re Happy and You Know It that we are familiar with!
         </p>
-        <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Listen to London Bridge</button>
+        <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="speakCorrectVersion()">Listen to London Bridge</button>
         <p> Notice where the repetition is different - that is where we want to add in our conditions for the if statement. When you are ready, tap on the PLAY button to see how you did!
         </p>
         <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>

@@ -457,6 +457,11 @@ function handleSpeakPress() {
   // }
 }
 
+function speakCorrectVersion() {
+  var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'London Bridge is falling down, falling down, falling down. London Bridge is falling down. My fair lady.\'));'
+  eval(result);
+}
+
 </script>
 
 <style>
@@ -539,7 +544,7 @@ h1 {
             If statements help us specify certain conditions to build the blocks a certain way, while keeping the rest unchanged. This way, we are able to build most of the song with for loops, but still change it up just a little bit where there are variations in the repetitions.
             This is the London Bridge we know.
         </p>
-        <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Listen to London Bridge</button>
+        <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="speakCorrectVersion()">Listen to London Bridge</button>
         <p>Do you notice where the difference is? Try dragging the if statement block to the playground, and decide where to specify the condition!</p>
         <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
 

@@ -452,6 +452,11 @@ function handleSpeakPress() {
   // }
 }
 
+function speakCorrectVersion() {
+  var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'If your happy and you know it, clap your hands. If your happy and you know it, clap your hands. If your happy and you know it, and you really want to show it. If your happy and you know it, clap your hands. \'));'
+  eval(result);
+}
+
 </script>
 
 <style>
@@ -533,7 +538,7 @@ h1 {
         <p> 
             Now it is your turn to build If You’re Happy and You Know It! Listen carefully to the correct version, and put the blocks in the right order! 
         </p>
-        <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Listen to London Bridge</button>
+        <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="speakCorrectVersion()">Listen to London Bridge</button>
         <p>When you are ready, tap on the PLAY button to see how you did!</p>
         <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
 

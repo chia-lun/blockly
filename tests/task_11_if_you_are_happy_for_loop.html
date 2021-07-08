@@ -452,6 +452,11 @@ function handleSpeakPress() {
   // }
 }
 
+function speakCorrectVersion() {
+  var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'If your happy and you know it, clap your hands. If your happy and you know it, clap your hands. If your happy and you know it, clap your hands. If your happy and you know it, clap your hands.\'));'
+  eval(result);
+}
+
 </script>
 
 <style>
@@ -532,7 +537,7 @@ h1 {
         <h1>Task 11 - Instructions</h1>
         <p> Here we would like you to use the for loop to recreate the correct version:
         </p>
-        <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Listen to London Bridge</button>
+        <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="speakCorrectVersion()">Listen to London Bridge</button>
         <p>When you are ready, tap on the PLAY button to see how you did!
         </p>
         <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
