@@ -85,7 +85,6 @@ Blockly.Linearization = function(workspace, parentNav, mainNavList) {
   // ***Requires Localization***
   /** @const @private */
   this.returnText_ = 'return ';
-
   workspace.addChangeListener(e => this.onChange(e));
 };
 
@@ -243,6 +242,9 @@ Blockly.Linearization.prototype.onChange = function(e) {
   }).catch(console.warn);
 };
 
+// Counts how many times the generateList_ function run
+var generateListCount = 0;
+
 /**
  * Fully redraws linearization, replacing the mainNavList and parentNav.
  * @param {?Blockly.Events.Abstract} e the workspace event that triggers this
@@ -261,14 +263,24 @@ Blockly.Linearization.prototype.generateList_ = function(e) {
     this.alterSelectedWithEvent_(e);
   }
 
-  // make and replace the parentNav
-  this.generateParentNav_(this.selected);
-
   // make proper view...
-  var navListDiv = this.mainNavList;
+  this.generateParentNav_(this.selected);
   var newDiv = this.selected?
       this.makeBlockSpecificView_(this.selected):
       this.makeWorkspaceView_();
+
+  // Avoids selecting a block as soon as the files open
+  if(generateListCount < 2){
+    this.selected = null;
+    this.generateParentNav_(null);
+    newDiv = this.makeWorkspaceView_();
+  }
+
+  generateListCount = generateListCount + 1;
+
+  // make and replace the parentNav
+  var navListDiv = this.mainNavList;
+
 
   // ...and replace mainNavList
   newDiv.setAttribute('id', 'mainNavList');
@@ -408,7 +420,7 @@ Blockly.Linearization.prototype.generateParentNav_ = function(rootNode) {
       pNav.appendChild(this.createElement('br'));
       var newStackItem = this.createElement('b');
       // ***Requires Localization***
-      newStackItem.appendChild(document.createTextNode('Start new stack'));
+      newStackItem.appendChild(document.createTextNode('Disconnect from stack'));
       newStackItem.addEventListener('click', e => {
         this.blockJoiner.disconnectBlock();
       });
@@ -1488,7 +1500,7 @@ Blockly.Linearization.getNestingBlockName = function(block) {
     'procedures_defnoreturn': 'function',
     'procedures_defreturn': 'function',
     'controls_whileUntil': 'repeat while',
-    'nursery_rhyme' : 'nursery rhyme',
+    'nursery_rhyme' : 'When Play is clicked',
     'repeat' : 'repeat',
     'for_loop_increment_with_i' : 'count with i',
     'for_loop_increment_with_j' : 'count with j'
