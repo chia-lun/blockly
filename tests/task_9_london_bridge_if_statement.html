@@ -305,7 +305,7 @@ function popFlyout(category) {
 
   var navBar = document.getElementById('navBar');
   navBar.setAttribute('curSelected', category.styleName);
-  var blockListElem = navBar.firstChild;  
+  var blockListElem = navBar.firstChild;
   blockListElem.innerHTML = '';
   var returnButtonItem = document.createElement('li');
   returnButtonItem.textContent = 'return to ' + category.styleName;
@@ -321,7 +321,7 @@ function popFlyout(category) {
     .map((block) => {
       var blockItem = document.createElement('li');
       blockItem.setAttribute('class', 'categoryButton');
-      var blockButton = document.createElement('span');   
+      var blockButton = document.createElement('span');
       blockButton.setAttribute('role', 'button');
       /** block type as label vs. aria label (kinda bad sometimes) as label **/
       // blockButton.textContent = block.getAttribute('type');
@@ -335,22 +335,22 @@ function popFlyout(category) {
       blockDescription.style.visibility = "hidden";
       blockDescription.innerText = info[1];
       document.body.appendChild(blockDescription);
-  
+
       blockItem.appendChild(blockButton);
       blockItem.addEventListener('click', e => addBlockToWorkspace(block));
-      blockListElem.appendChild(blockItem); 
+      blockListElem.appendChild(blockItem);
     })
 }
 
 // block DOM object as input
 // returns block arialabel, ariadescription, and id
 function getBlockInfo(blockDOM) {
-  Blockly.Events.disable(); 
+  Blockly.Events.disable();
   var tempBlock = Blockly.Xml.domToBlock(blockDOM, workspace);
   tempBlock.render();
   var ariaLabel = tempBlock.makeAriaLabel();
   var id = tempBlock.type + "-descrip";
-  var ariaDescription = typeof(tempBlock.tooltip) === "function" ? 
+  var ariaDescription = typeof(tempBlock.tooltip) === "function" ?
     tempBlock.tooltip : tempBlock.tooltip;
   var varList = tempBlock.getVarModels(); //TODO: sometime this is undefined? for (call do_something w/ return) blocks
 
@@ -368,7 +368,7 @@ function getBlockInfo(blockDOM) {
 }
 
 function domToBlockData(elem) {
-  Blockly.Events.disable();  
+  Blockly.Events.disable();
   try {
     var block = workspace.newBlock(elem.getAttribute('type'));
   } catch {
@@ -446,7 +446,7 @@ function handleSpeakPress() {
       "  window.speechSynthesis.speak(new SpeechSynthesisUtterance('My fair lady'));"
   var result = ""
   if (code === correctAnswer){
-      result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Excellent, this is correct! Lets move on to the next task.\'));'
+      result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Excellent, this is correct! Thank you for helping us build London Bridge!\'));'
   }
   else {
       result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Hmm, seems like this is not quite right. Think carefully about how each repetition differs!\'));'
@@ -518,8 +518,8 @@ h1 {
   margin: 0 0 9px 0;
 }
 .categoryButton {
-  display:block; 
-  padding: 8px 16px; 
+  display:block;
+  padding: 8px 16px;
   background-color: #cdd4cf;
   margin: 3px 0px;
   overflow-wrap: break-word;
@@ -540,12 +540,15 @@ h1 {
 
     <div class="grid-child left">
         <h1>Task 9 - Instructions</h1>
-        <p> Finally! You did an amazing job helping us build London Bridge so far by using the for loops, but it still doesn’t quite match the London Bridge we all know. To achieve that, we are introducing the if statement.
-            If statements help us specify certain conditions to build the blocks a certain way, while keeping the rest unchanged. This way, we are able to build most of the song with for loops, but still change it up just a little bit where there are variations in the repetitions.
-            This is the London Bridge we know.
+        <p> Finally! You did an amazing job helping us build London Bridge, but it still isn't quite right. If statements should help!\n
+          If statements help us specify certain conditions to build the blocks, while keeping the rest unchanged.
+          We can still build most of the song with for loops and use a condition where there are variations in the repetition.\n
+          This is London Bridge:
         </p>
         <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="speakCorrectVersion()">Listen to London Bridge</button>
-        <p>Do you notice where the difference is? Try dragging the if statement block to the playground, and decide where to specify the condition!</p>
+        <p>Do you notice the difference? Try adding an if statement block to the playground, and decide where to specify the condition!\n
+          When you are ready, tap the PLAY button to see how you did!
+        </p>
         <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
 
         <h1>Navigation</h1>
@@ -613,10 +616,10 @@ h1 {
                                         </block>
                                     </statement>
 
-                                
-     
+
+
                             </next>
-                           
+
                         </block>
                     </statement>
                 <next>

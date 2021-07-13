@@ -305,7 +305,7 @@ function popFlyout(category) {
 
   var navBar = document.getElementById('navBar');
   navBar.setAttribute('curSelected', category.styleName);
-  var blockListElem = navBar.firstChild;  
+  var blockListElem = navBar.firstChild;
   blockListElem.innerHTML = '';
   var returnButtonItem = document.createElement('li');
   returnButtonItem.textContent = 'return to ' + category.styleName;
@@ -321,7 +321,7 @@ function popFlyout(category) {
     .map((block) => {
       var blockItem = document.createElement('li');
       blockItem.setAttribute('class', 'categoryButton');
-      var blockButton = document.createElement('span');   
+      var blockButton = document.createElement('span');
       blockButton.setAttribute('role', 'button');
       /** block type as label vs. aria label (kinda bad sometimes) as label **/
       // blockButton.textContent = block.getAttribute('type');
@@ -335,22 +335,22 @@ function popFlyout(category) {
       blockDescription.style.visibility = "hidden";
       blockDescription.innerText = info[1];
       document.body.appendChild(blockDescription);
-  
+
       blockItem.appendChild(blockButton);
       blockItem.addEventListener('click', e => addBlockToWorkspace(block));
-      blockListElem.appendChild(blockItem); 
+      blockListElem.appendChild(blockItem);
     })
 }
 
 // block DOM object as input
 // returns block arialabel, ariadescription, and id
 function getBlockInfo(blockDOM) {
-  Blockly.Events.disable(); 
+  Blockly.Events.disable();
   var tempBlock = Blockly.Xml.domToBlock(blockDOM, workspace);
   tempBlock.render();
   var ariaLabel = tempBlock.makeAriaLabel();
   var id = tempBlock.type + "-descrip";
-  var ariaDescription = typeof(tempBlock.tooltip) === "function" ? 
+  var ariaDescription = typeof(tempBlock.tooltip) === "function" ?
     tempBlock.tooltip : tempBlock.tooltip;
   var varList = tempBlock.getVarModels(); //TODO: sometime this is undefined? for (call do_something w/ return) blocks
 
@@ -368,7 +368,7 @@ function getBlockInfo(blockDOM) {
 }
 
 function domToBlockData(elem) {
-  Blockly.Events.disable();  
+  Blockly.Events.disable();
   try {
     var block = workspace.newBlock(elem.getAttribute('type'));
   } catch {
@@ -513,8 +513,8 @@ h1 {
   margin: 0 0 9px 0;
 }
 .categoryButton {
-  display:block; 
-  padding: 8px 16px; 
+  display:block;
+  padding: 8px 16px;
   background-color: #cdd4cf;
   margin: 3px 0px;
   overflow-wrap: break-word;
@@ -535,9 +535,9 @@ h1 {
 
     <div class="grid-child left">
         <h1>Task 5 - Instructions</h1>
-        <p>We tried using the for loop to build the first part of London Bridge, but we ran into some trouble! </p>
+        <p>We tried building the first part of London Bridge using for loop, but ran into some trouble! Do you notice what is wrong? Please help us fix it!</p>
         <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="handleSpeakPress()">Listen to London Bridge</button>
-        <p>What is wrong? Could you help us fix it? When you are ready, tap on the PLAY button to see how you did!</p>
+        <p>When you are ready, tap the PLAY button to see how you did!</p>
         <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
 
         <h1>Navigation</h1>
