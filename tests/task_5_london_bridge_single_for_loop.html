@@ -552,55 +552,44 @@ h1 {
         <block id="nursery_rhyme" type="nursery_rhyme" deletable="false" class="start_blocks">
             <statement name = "nursery_rhyme">
                 <variables>
-                  <variable type="iterated_variable">j</variable>
+                    <variable type="iterated_variable">i</variable>
+                    <variable type="iterated_variable">j</variable>
                 </variables>
-                <block type="for_loop_increment_with_j">
-                    <field name="iterated_variable">j</field>
-                    <value name="lower_bound">
-                      <shadow type="math_number">
-                        <field name="NUM">0</field>
-                      </shadow>
-                    </value>
-                    <value name="upper_bound">
-                      <shadow type="math_number">
-                        <field name="NUM">2</field>
-                      </shadow>
-                    </value>
-                    <value name="increment_by">
-                      <shadow type="math_number">
-                        <field name="NUM">1</field>
-                      </shadow>
-                    </value>
-                    <statement name="inside_statement">
                         <block type="rhyme_say">
                             <value name="TEXT">
                                 <block type="rhyme_london_bridge">
                                 </block>
                             </value>
                             <next>
-                                <block type="rhyme_say">
-                                    <value name="TEXT">
-                                        <block type="rhyme_falling_down">
-                                        </block>
+                                <block type="for_loop_increment_with_j">
+                                    <field name="iterated_variable">j</field>
+                                    <value name="lower_bound">
+                                        <shadow type="math_number">
+                                            <field name="NUM">0</field>
+                                        </shadow>
                                     </value>
-                                    <next>
+                                    <value name="upper_bound">
+                                        <shadow type="math_number">
+                                            <field name="NUM">2</field>
+                                        </shadow>
+                                    </value>
+                                    <value name="increment_by">
+                                        <shadow type="math_number">
+                                            <field name="NUM">1</field>
+                                        </shadow>
+                                    </value>
+                                    <statement name="inside_statement">
                                         <block type="rhyme_say">
                                             <value name="TEXT">
                                                 <block type="rhyme_falling_down">
                                                 </block>
                                             </value>
-                                            <next>
-                                                <block type="rhyme_say">
-                                                    <value name="TEXT">
-                                                        <block type="rhyme_falling_down">
-                                                        </block>
-                                                    </value>
-                                            </next>
-                                    </next>
+                                        </block>
+                                    </statement>
+                                </block>
+
                             </next>
                         </block>
-                    </statement>
-                </block>
             </statement>
         </block>
 
