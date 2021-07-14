@@ -403,10 +403,6 @@ function addBlockToWorkspace(blockDOM, do_update=true) {
 function updateFlyout() {
   hideBlocksFromScreenReader();
 
-  var navBar = document.getElementById('navBar');
-  var curCategory = workspace.getToolbox().tree_.getChildren()
-    .filter(child => child.styleName === navBar.getAttribute('curSelected'))[0];
-  popFlyout(curCategory);
 }
 
 

@@ -192,13 +192,13 @@ function onBlockChangeOrRemove(event) {
   var block = workspace.getBlockById(event.blockID);
 
   if (event.type === "delete") {
-    updateFlyout();
+      hideBlocksFromScreenReader();
     dy -= 50
   }
 
   if (event.type === "change") {
     if (event.element === 'field' && event.name === 'NAME') {
-      updateFlyout();
+        hideBlocksFromScreenReader();
     }
   }
 }
@@ -396,18 +396,10 @@ function addBlockToWorkspace(blockDOM, do_update=true) {
     dy += (block.getHeightWidth().height + 10);
   }
   if (do_update) {
-    updateFlyout();
+    hideBlocksFromScreenReader();
   }
 }
 
-function updateFlyout() {
-  hideBlocksFromScreenReader();
-
-  var navBar = document.getElementById('navBar');
-  var curCategory = workspace.getToolbox().tree_.getChildren()
-    .filter(child => child.styleName === navBar.getAttribute('curSelected'))[0];
-  popFlyout(curCategory);
-}
 
 function hideBlocksFromScreenReader(){
     //Hides editable text from screen reader
