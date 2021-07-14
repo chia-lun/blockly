@@ -525,7 +525,7 @@ h1 {
 <body onload="start()">
 <div class="grid-container">
 
-    <div class="grid-child left">
+    <div class="grid-child left" style="overflow-y:scroll;">
         <h1>Task 5 - Instructions</h1>
         <p>We tried building the first part of London Bridge using for loop, but ran into some trouble! Do you notice what is wrong? Please help us fix it!</p>
         <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="handleSpeakPress()">Listen to London Bridge</button>
@@ -544,8 +544,7 @@ h1 {
         <block id="nursery_rhyme" type="nursery_rhyme" deletable="false" class="start_blocks">
             <statement name = "nursery_rhyme">
                 <variables>
-                    <variable type="iterated_variable">i</variable>
-                    <variable type="iterated_variable">j</variable>
+                    <variable type="iterated_variable" aria-hidden="true">j</variable>
                 </variables>
                         <block type="rhyme_say">
                             <value name="TEXT">
@@ -554,20 +553,20 @@ h1 {
                             </value>
                             <next>
                                 <block type="for_loop_increment_with_j">
-                                    <field name="iterated_variable">j</field>
+                                    <field name="iterated_variable" aria-hidden="true">j</field>
                                     <value name="lower_bound">
                                         <shadow type="math_number">
-                                            <field name="NUM">0</field>
+                                            <field name="NUM" aria-hidden="true">0</field>
                                         </shadow>
                                     </value>
                                     <value name="upper_bound">
                                         <shadow type="math_number">
-                                            <field name="NUM">2</field>
+                                            <field name="NUM" aria-hidden="true">2</field>
                                         </shadow>
                                     </value>
                                     <value name="increment_by">
                                         <shadow type="math_number">
-                                            <field name="NUM">1</field>
+                                            <field name="NUM" aria-hidden="true">1</field>
                                         </shadow>
                                     </value>
                                     <statement name="inside_statement">

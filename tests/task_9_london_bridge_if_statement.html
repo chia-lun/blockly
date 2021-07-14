@@ -529,7 +529,7 @@ h1 {
 <body onload="start()">
 <div class="grid-container">
 
-    <div class="grid-child left">
+    <div class="grid-child left" style="overflow-y:scroll;">
         <h1>Task 9 - Instructions</h1>
         <p> Finally! You did an amazing job helping us build London Bridge, but it still isn't quite right. If statements should help!\n
           If statements help us specify certain conditions to build the blocks, while keeping the rest unchanged.
@@ -554,24 +554,24 @@ h1 {
         <block id="nursery_rhyme" type="nursery_rhyme" deletable="false" class="start_blocks">
             <statement name = "nursery_rhyme">
                 <variables>
-                  <variable type="iterated_variable">i</variable>
-                  <variable type="iterated_variable">j</variable>
+                  <variable type="iterated_variable" aria-hidden="true">i</variable>
+                  <variable type="iterated_variable" aria-hidden="true">j</variable>
                 </variables>
                 <block type="for_loop_increment_with_i">
-                    <field name="iterated_variable">i</field>
+                    <field name="iterated_variable" aria-hidden="true">i</field>
                     <value name="lower_bound">
                       <shadow type="math_number">
-                        <field name="NUM">0</field>
+                        <field name="NUM" aria-hidden="true">0</field>
                       </shadow>
                     </value>
                     <value name="upper_bound">
                       <shadow type="math_number">
-                        <field name="NUM">2</field>
+                        <field name="NUM" aria-hidden="true">2</field>
                       </shadow>
                     </value>
                     <value name="increment_by">
                       <shadow type="math_number">
-                        <field name="NUM">1</field>
+                        <field name="NUM" aria-hidden="true">1</field>
                       </shadow>
                     </value>
                     <statement name="inside_statement">
@@ -582,20 +582,20 @@ h1 {
                             </value>
                             <next>
                                 <block type="for_loop_increment_with_j">
-                                    <field name="iterated_variable">j</field>
+                                    <field name="iterated_variable" aria-hidden="true">j</field>
                                     <value name="lower_bound">
                                     <shadow type="math_number">
-                                        <field name="NUM">0</field>
+                                        <field name="NUM" aria-hidden="true">0</field>
                                     </shadow>
                                     </value>
                                     <value name="upper_bound">
                                     <shadow type="math_number">
-                                        <field name="NUM">3</field>
+                                        <field name="NUM" aria-hidden="true">3</field>
                                     </shadow>
                                     </value>
                                     <value name="increment_by">
                                     <shadow type="math_number">
-                                        <field name="NUM">1</field>
+                                        <field name="NUM" aria-hidden="true">1</field>
                                     </shadow>
                                     </value>
                                     <statement name="inside_statement">
