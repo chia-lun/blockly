@@ -224,4 +224,12 @@ Blockly.JavaScript['nursery_rhyme'] = function(block) {
 	return(Blockly.JavaScript.statementToCode(block, 'nursery_rhyme'));
 }
 
+Blockly.JavaScript['this_is_correct'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
+  };
+
+  Blockly.JavaScript['math_is_hard'] = function(block) {
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_AT
+  };
+
 

@@ -528,3 +528,27 @@ Blockly.Blocks['variable_j'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['this_is_correct'] = {
+  init: function() {
+    this.appendDummyInput("TEXT")
+        .appendField("this is correct","TEXT");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['math_is_hard'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("math is hard");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
