@@ -539,7 +539,7 @@ h1 {
 <body onload="start()">
 <div class="grid-container">
 
-  <div class="grid-child left">
+  <div class="grid-child left" style="overflow-y:scroll;">
     <h1>Training 2 - Instructions</h1>
     <p>We started building Jingle Bells in the playground, but we are missing a line of lyrics. Listen to Jingle Bells and help us place the last block: </p>
     <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="handleSpeakPress()">Listen to Jingle Bells</button>
@@ -562,7 +562,7 @@ h1 {
             <block type="rhyme_little_ducks">
                 <value name="count">
                     <block type="duck_count">
-                        <field name="VAR" variabletype="number_of_ducks">number of ducks</field>
+                        <field name="VAR" variabletype="number_of_ducks" aria-hidden="true">number of ducks</field>
                     </block>
                 </value>
             </block>
@@ -583,7 +583,7 @@ h1 {
                     <block type="decrement_variable">
                         <value name="decrease_value">
                             <shadow type="math_number">
-                                <field name="NUM">1</field>
+                                <field name="NUM" aria-hidden="true">1</field>
                               </shadow>
                         </value>
 
