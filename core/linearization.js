@@ -1142,7 +1142,7 @@ Blockly.Linearization.prototype.makeBlockItem_ = function(node, branch) {
   var blockNode = this.blockJoiner.blockNode;
   if (blockNode && blockNode.getLocation().id === node.getLocation().id) {
     // ***Requires Localization***
-    text += ' (moving me...)';
+    text += ' (moving me and blocks below)';
   }
   var item = this.makeTextItem(text);
   item.firstChild.setAttribute('role', 'button');

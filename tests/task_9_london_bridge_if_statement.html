@@ -524,27 +524,51 @@ h1 {
     grid-gap: 20px;
 }
 
+#left{
+    position: relative;
+}
+
+#buttonPreviousTask{
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+#buttonNextTask{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
 </style>
 </head>
 <body onload="start()">
 <div class="grid-container">
 
-    <div class="grid-child left" style="overflow-y:scroll;">
+    <div class="grid-child" id="left" style="overflow-y:scroll;">
         <h1>Task 9 - Instructions</h1>
-        <p> Finally! You did an amazing job helping us build London Bridge, but it still isn't quite right. If statements should help!\n
+        <p> Finally! You did an amazing job helping us build London Bridge, but it still isn't quite right. If statements should help!
           If statements help us specify certain conditions to build the blocks, while keeping the rest unchanged.
-          We can still build most of the song with for loops and use a condition where there are variations in the repetition.\n
+          We can still build most of the song with for loops and use a condition where there are variations in the repetition.
           This is London Bridge:
         </p>
         <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="speakCorrectVersion()">Listen to London Bridge</button>
-        <p>Do you notice the difference? Try adding an if statement block to the playground, and decide where to specify the condition!\n
+        <p>Do you notice the difference? Try adding an if statement block to the playground, and decide where to specify the condition!
           When you are ready, tap the PLAY button to see how you did!
         </p>
         <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
 
         <h1>Navigation</h1>
         <p id='parentNav'></p>
-        <ul id='mainNavList'><ul>
+        <ul id='mainNavList'></ul>
+
+        <span onclick="window.location.href='task_8_london_bridge_nested_for_loop.html';">
+            <button id="buttonPreviousTask" style="margin-left: 10px" role="button">Go to previous task</button>
+        </span>
+
+        <span onclick="window.location.href='task_10_if_you_are_happy_sequential.html';">
+            <button id="buttonNextTask" style="margin-left: 10px" role="button">Go to next task</button>
+        </span>
     </div>
 
     <div class="grid-child right">

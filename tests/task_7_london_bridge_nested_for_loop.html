@@ -520,12 +520,28 @@ h1 {
     grid-gap: 20px;
 }
 
+#left{
+    position: relative;
+}
+
+#buttonPreviousTask{
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+#buttonNextTask{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
 </style>
 </head>
 <body onload="start()">
 <div class="grid-container">
 
-    <div class="grid-child left" style="overflow-y:scroll;">
+    <div class="grid-child" id="left" style="overflow-y:scroll;">
         <h1>Task 7 - Instructions</h1>
         <p>Great job! We are now moving on to something more complicated. Let's try putting a for loop inside another for loop. Fix the blocks to match the correct version!</p>
         <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="speakCorrectVersion()">Listen to London Bridge</button>
@@ -534,7 +550,16 @@ h1 {
 
         <h1>Navigation</h1>
         <p id='parentNav'></p>
-        <ul id='mainNavList'><ul>
+        <ul id='mainNavList'></ul>
+
+        <span onclick="window.location.href='task_6_london_bridge_single_for_loop.html';">
+            <button id="buttonPreviousTask" style="margin-left: 10px" role="button">Go to previous task</button>
+        </span>
+
+        <span onclick="window.location.href='task_8_london_bridge_nested_for_loop.html';">
+            <button id="buttonNextTask" style="margin-left: 10px" role="button">Go to next task</button>
+        </span>
+
     </div>
 
     <div class="grid-child right">
