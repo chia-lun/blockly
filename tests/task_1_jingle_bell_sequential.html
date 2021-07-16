@@ -531,19 +531,10 @@ h1 {
 }
 
 #left{
-  position: relative;
-}
-
-#buttonPreviousTask{
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-}
-
-#buttonNextTask{
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 40px;
+  grid-gap: 0;
 }
 
 
@@ -553,24 +544,28 @@ h1 {
 <div class="grid-container">
 
   <div class="grid-child" id="left" style="overflow-y:scroll;">
-    <h1>Task 1 - Instructions</h1>
-    <p>We started building Jingle Bells in the playground, but we are missing a line of lyrics. Listen to Jingle Bells and help us place the last block: </p>
-    <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="handleSpeakPress()">Listen to Jingle Bells</button>
-    <p>When you are ready, tap the PLAY button to see how you did! </p>
-    <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
+    <div class="top">
+      <h1>Task 1 - Instructions</h1>
+      <p>We started building Jingle Bells in the playground, but we are missing a line of lyrics. Listen to Jingle Bells and help us place the last block: </p>
+      <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="handleSpeakPress()">Listen to Jingle Bells</button>
+      <p>When you are ready, tap the PLAY button to see how you did! </p>
+      <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
 
-    <h1>Navigation</h1>
+      <h1>Navigation</h1>
 
-    <p id='parentNav'></p>
-    <ul id='mainNavList'></ul>
+      <p id='parentNav'></p>
+      <ul id='mainNavList'></ul>
+    </div>
 
-    <span onclick="window.location.href='task_0_if_statement.html';">
-      <button id="buttonPreviousTask" style="margin-left: 10px" role="button">Go to previous task</button>
-    </span>
+    <div class="bottom">
+      <span onclick="window.location.href='task_0_if_statement.html';">
+        <button id="buttonPreviousTask" style="float: left; margin-left: 10px; margin-bottom: 10px" role="button">Go to previous task</button>
+      </span>
 
-    <span onclick="window.location.href='task_2_jingle_bell_sequential.html';">
-      <button id="buttonNextTask" style="margin-left: 10px" role="button">Go to next task</button>
-    </span>
+      <span onclick="window.location.href='task_2_jingle_bell_sequential.html';">
+        <button id="buttonNextTask" style="float: right; margin-right: 10px; margin-bottom: 10px" role="button">Go to next task</button>
+      </span>
+    </div>
 
 
   </div>

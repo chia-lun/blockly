@@ -533,19 +533,10 @@ h1 {
 }
 
 #left{
-    position: relative;
-}
-
-#buttonPreviousTask{
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-}
-
-#buttonNextTask{
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 40px;
+    grid-gap: 0;
 }
 
 </style>
@@ -554,22 +545,27 @@ h1 {
 <div class="grid-container">
 
     <div class="grid-child" id="left" style="overflow-y:scroll;">
-        <h1>Task 12 - Instructions</h1>
-        <p> Now it’s time to add an if statement! We simplified the last task to include a for loop, and now use an if statement to build the original version of If You're Happy and You Know It:
-        </p>
-        <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="speakCorrectVersion()">Listen to If You're Happy and You Know It</button>
-        <p> Notice where the repetition is different - that is where we add the if statement.\n
-          When you are ready, tap the PLAY button to see how you did!
-        </p>
-        <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
+        <div class="top">
+            <h1>Task 12 - Instructions</h1>
+            <p> Now it’s time to add an if statement! We simplified the last task to include a for loop, and now use an if statement to build the original version of If You're Happy and You Know It:
+            </p>
+            <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="speakCorrectVersion()">Listen to If You're Happy and You Know It</button>
+            <p> Notice where the repetition is different - that is where we add the if statement.\n
+              When you are ready, tap the PLAY button to see how you did!
+            </p>
+            <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
 
-        <h1>Navigation</h1>
-        <p id='parentNav'></p>
-        <ul id='mainNavList'></ul>
+            <h1>Navigation</h1>
+            <p id='parentNav'></p>
+            <ul id='mainNavList'></ul>
 
-        <span onclick="window.location.href='task_11_if_you_are_happy_for_loop.html';">
-            <button id="buttonPreviousTask" style="margin-left: 10px" role="button">Go to previous task</button>
-        </span>
+        </div>
+
+        <div class="bottom">
+            <span onclick="window.location.href='task_11_if_you_are_happy_for_loop.html';">
+                <button id="buttonPreviousTask" style="float: left; margin-left: 10px; margin-bottom: 10px" role="button">Go to previous task</button>
+            </span>
+        </div>
 
     </div>
 
