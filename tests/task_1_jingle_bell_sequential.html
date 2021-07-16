@@ -449,6 +449,15 @@ function speakCorrectVersion() {
   var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Jingle bells, jingle bells Jingle all the way. Oh, what fun it is to ride. In a one horse open sleigh!\'));'
   eval(result);
 }
+ 
+function showWorkspace(){
+  workspace.setVisible(true);
+  document.getElementsByClassName('blocklyToolboxDiv')[0].style.display = 'none'
+}
+
+function hideWorkspace(){
+  workspace.setVisible(false);
+}
 
 </script>
 
@@ -541,7 +550,12 @@ h1 {
   </div>
 
   <div class="grid-child right">
-    <div id="blocklyDiv"></div>
+    <div id="blocklyDiv">
+      <p aria-hidden="true">
+        <a href="javascript:void(showWorkspace())">Show/</a>
+        <a href="javascript:void(hideWorkspace())">Hide</a>
+      </p>
+    </div>
 
 
     <block id="nursery_rhyme" type="nursery_rhyme" deletable="false" class="start_blocks">
@@ -661,11 +675,6 @@ h1 {
   </div>
 
 </div>
-
-
-
-
-
 
   <!-- Mac students added this code -->
 </body>
