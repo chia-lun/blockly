@@ -530,13 +530,29 @@ h1 {
   grid-gap: 20px;
 }
 
+#left{
+  position: relative;
+}
+
+#buttonPreviousTask{
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+
+#buttonNextTask{
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
 
 </style>
 </head>
 <body onload="start()">
 <div class="grid-container">
 
-  <div class="grid-child left" style="overflow-y:scroll;">
+  <div class="grid-child" id="left" style="overflow-y:scroll;">
     <h1>Task 1 - Instructions</h1>
     <p>We started building Jingle Bells in the playground, but we are missing a line of lyrics. Listen to Jingle Bells and help us place the last block: </p>
     <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="handleSpeakPress()">Listen to Jingle Bells</button>
@@ -546,7 +562,17 @@ h1 {
     <h1>Navigation</h1>
 
     <p id='parentNav'></p>
-    <ul id='mainNavList'><ul>
+    <ul id='mainNavList'></ul>
+
+    <span onclick="window.location.href='task_0_if_statement.html';">
+      <button id="buttonPreviousTask" style="margin-left: 10px" role="button">Go to previous task</button>
+    </span>
+
+    <span onclick="window.location.href='task_2_jingle_bell_sequential.html';">
+      <button id="buttonNextTask" style="margin-left: 10px" role="button">Go to next task</button>
+    </span>
+
+
   </div>
 
   <div class="grid-child right">
@@ -649,6 +675,7 @@ h1 {
     <block type="for_loop_increment_with_i"></block>
     <block type="variable_i"></block>
     <block type="repeat"></block>
+
     <!-- <block type="variables_set" id="start_verse_Set" deletable="false" editable="false" class="start_blocks">
       <field name="VAR" variabletype="">verse</field>
       <value name="VALUE">

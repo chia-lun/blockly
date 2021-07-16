@@ -542,13 +542,29 @@ h1 {
   grid-gap: 20px;
 }
 
+#left{
+  position: relative;
+}
+
+#buttonPreviousTask{
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+
+#buttonNextTask{
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
 
 </style>
 </head>
 <body onload="start()">
 <div class="grid-container">
 
-  <div class="grid-child left">
+  <div class="grid-child" id="left" style="overflow-y:scroll;">
     <h1>Training 4 - Instructions</h1>
     <p>We started building Jingle Bells in the playground, but we are missing a line of lyrics. Listen to Jingle Bells and help us place the last block: </p>
     <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="handleSpeakPress()">Listen to Jingle Bells</button>
@@ -558,7 +574,16 @@ h1 {
     <h1>Navigation</h1>
 
     <p id='parentNav'></p>
-    <ul id='mainNavList'><ul>
+    <ul id='mainNavList'></ul>
+
+    <span onclick="window.location.href='task_0_for_loop_five_little_ducks.html';">
+            <button id="buttonPreviousTask" style="margin-left: 10px" role="button">Go to previous task</button>
+    </span>
+
+    <span onclick="window.location.href='task_1_jingle_bell_sequential.html';">
+            <button id="buttonNextTask" style="margin-left: 10px" role="button">Go to next task</button>
+    </span>
+
   </div>
 
   <div class="grid-child right">
@@ -572,13 +597,13 @@ h1 {
     <block id="nursery_rhyme" type="nursery_rhyme" deletable="false" class="start_blocks">
       <statement name = "nursery_rhyme">
         <variables>
-            <variable type="" id="IN;3g(K(^ds|keFcPtun">number of ducks</variable>
+            <variable type="" id="IN;3g(K(^ds|keFcPtun" aria-hidden="true">number of ducks</variable>
           </variables>
           <block type="set_variable" id="BM(Gd~|TFl[)Ehk$CC}b" x="163" y="188">
-            <field name="number_of_ducks" id="IN;3g(K(^ds|keFcPtun" variabletype="">number of ducks</field>
+            <field name="number_of_ducks" id="IN;3g(K(^ds|keFcPtun" variabletype="" aria-hidden="true">number of ducks</field>
             <value name="variable_value">
               <block type="math_number" id="$F#B?$}#t)Mhcg`/G#6y">
-                <field name="NUM">5</field>
+                <field name="NUM" aria-hidden="true">5</field>
               </block>
             </value>
             <next>
@@ -586,15 +611,15 @@ h1 {
                 <mutation else="1"></mutation>
                 <value name="IF0">
                   <block type="logic_compare" id="~xGqiaN`|qkRCVXN{UX/">
-                    <field name="OP">GT</field>
+                    <field name="OP" aria-hidden="true">GT</field>
                     <value name="A">
                       <block type="duck_count" id="lgK6jh2/wQNxguXc]_R_">
-                        <field name="number_of_ducks" id="IN;3g(K(^ds|keFcPtun" variabletype="">number of ducks</field>
+                        <field name="number_of_ducks" id="IN;3g(K(^ds|keFcPtun" variabletype="" aria-hidden="true">number of ducks</field>
                       </block>
                     </value>
                     <value name="B">
                       <block type="math_number" id="^,wITQM!_$~+Uug/1XJV">
-                        <field name="NUM">6</field>
+                        <field name="NUM" aria-hidden="true">6</field>
                       </block>
                     </value>
                   </block>

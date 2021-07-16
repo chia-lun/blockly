@@ -528,12 +528,28 @@ h1 {
     grid-gap: 20px;
 }
 
+#left{
+    position: relative;
+}
+
+#buttonPreviousTask{
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+#buttonNextTask{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
 </style>
 </head>
 <body onload="start()">
 <div class="grid-container">
 
-    <div class="grid-child left" style="overflow-y:scroll;">
+    <div class="grid-child" id="left" style="overflow-y:scroll;">
         <h1>Task 10 - Instructions</h1>
         <p>Now it is your turn to build If You’re Happy and You Know It! Listen carefully to the correct version, and put the blocks in the right order!</p>
         <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="speakCorrectVersion()">Listen to If You're Happy and You Know It</button>
@@ -542,7 +558,16 @@ h1 {
 
         <h1>Navigation</h1>
         <p id='parentNav'></p>
-        <ul id='mainNavList'><ul>
+        <ul id='mainNavList'></ul>
+
+        <span onclick="window.location.href='task_9_london_bridge_if_statement.html';">
+            <button id="buttonPreviousTask" style="margin-left: 10px" role="button">Go to previous task</button>
+        </span>
+
+        <span onclick="window.location.href='task_11_if_you_are_happy_for_loop.html';">
+            <button id="buttonNextTask" style="margin-left: 10px" role="button">Go to next task</button>
+        </span>
+
     </div>
 
     <div class="grid-child right">

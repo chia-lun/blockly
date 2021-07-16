@@ -40,6 +40,7 @@ Blockly.JavaScript['new_set_variable_test_1'] = function(block) {
 };
 
 Blockly.JavaScript['verse_count'] = function(block) {
+	Blockly.JavaScript.init(workspace);
 	var variable_number_of_verses = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('number_of_verses'), Blockly.Variables.NAME_TYPE);
 	return [variable_number_of_verses, Blockly.JavaScript.ORDER_ATOMIC];
 }
@@ -229,7 +230,7 @@ Blockly.JavaScript['this_is_correct'] = function(block) {
   };
 
   Blockly.JavaScript['math_is_hard'] = function(block) {
-	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_AT
+	return ['\'' + block.getFieldValue('TEXT') + '\'', Blockly.JavaScript.ORDER_ATOMIC];
   };
 
 
