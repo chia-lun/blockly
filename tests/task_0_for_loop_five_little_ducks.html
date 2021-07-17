@@ -444,11 +444,11 @@ function handleSpeakPress() {
   eval(code);
   var correctAnswer = '  window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Jingle bells, jingle bells\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Jingle all the way\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Oh, what fun it is to ride\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'In a one horse open sleigh\'));';
   if (code === correctAnswer){
-    var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Excellent, this is correct! Lets move on to the next task.\'));'
+    var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Well done! Do you have any questions? Don’t worry, we will practice some more!\'));'
     eval(result);
   }
   else {
-    var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Hmm, seems like this is not quite right. Try moving the block to a different spot!\'));'
+    var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Hmm, seems like this is not quite right. Try changing the number in the for loop block!\'));'
     eval(result);
   }
 
@@ -558,8 +558,10 @@ h1 {
   <div class="grid-child" id="left" style="overflow-y:scroll;">
     <div class="top">
       <h1>Training 3 - Instructions</h1>
-      <p>We started building Jingle Bells in the playground, but we are missing a line of lyrics. Listen to Jingle Bells and help us place the last block: </p>
-      <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="handleSpeakPress()">Listen to Jingle Bells</button>
+      <p>To repeat the lyrics, we are introducing for loops, which is a great way to repeat lines by simply changing a number on their for loop block. \n
+        We want to build the full version of Five Little Ducks, and need your help to fill in the for loop. We created a variable count for you, which tracks the number of ducks during each repetition. You don't need to worry about this, just focus on fixing the for loop for now!
+</p>
+      <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="handleSpeakPress()">Listen to Five Little Ducks</button>
       <p>When you are ready, tap the PLAY button to see how you did! </p>
       <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
 
