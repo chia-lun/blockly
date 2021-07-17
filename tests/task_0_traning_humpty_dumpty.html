@@ -444,7 +444,7 @@ function handleSpeakPress() {
   eval(code);
   var correctAnswer = '  window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Jingle bells, jingle bells\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Jingle all the way\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Oh, what fun it is to ride\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'In a one horse open sleigh\'));';
   if (code === correctAnswer){
-    var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Excellent, this is correct! Lets move on to the next task.\'));'
+    var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Excellent, lets move on to the next task.\'));'
     eval(result);
   }
   else {
@@ -560,7 +560,7 @@ h1 {
       <h1>Training 1 - Instructions</h1>
       <p>We are first going to build the song by putting lines of lyrics in the right order. When you reach for a block in the Toolbox, it will read you the line of lyrics as you touch it. Here's Humpty Dumpty: </p>
       <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="handleSpeakPress()">Listen to Humpty Dumpty</button>
-      <p>We already built the song in the playground. Go ahead and tap some blocks to find out which lyric they represent! </p>
+      <p>We already built the song in the playground. Go ahead and tap some blocks to find out which lyric they represent, then tap the PLAY button to play the whole song! </p>
       <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
 
       <h1>Navigation</h1>

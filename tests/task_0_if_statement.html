@@ -448,7 +448,7 @@ function handleSpeakPress() {
     eval(result);
   }
   else {
-    var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Hmm, seems like this is not quite right. Try moving the block to a different spot!\'));'
+    var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Hmm, seems like this is not quite right. Try moving the blocks to a different spot!\'));'
     eval(result);
   }
 
@@ -557,8 +557,10 @@ h1 {
   <div class="grid-child" id="left" style="overflow-y:scroll;">
     <div class="top">
       <h1>Training 4 - Instructions</h1>
-      <p>We started building Jingle Bells in the playground, but we are missing a line of lyrics. Listen to Jingle Bells and help us place the last block: </p>
-      <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="handleSpeakPress()">Listen to Jingle Bells</button>
+      <p>If statements add variety to the blocks when a condition is specified by the user. Under each different condition, we could achieve a different outcome. It is a bit abstract, so take a look at this example. How many ducks does mother duck have? \n
+      The statement we have provided you is whether the number of ducks is more or less than six. The two possible conditions are whether the statement is true or false. There are two blocks in the toolbox that we would like you to place inside the if statement.
+      Either one corresponds to one condition. Take a look at the blocks and place them under the corresponding conditions. </p>
+      <button style="margin-left: 10px" role="button" onclick="speakCorrectVersion()" onKeyDown="handleSpeakPress()">Listen to Five Little Ducks</button>
       <p>When you are ready, tap the PLAY button to see how you did! </p>
       <button style="margin-left: 10px" role="button" onclick="handleSpeakPress()" onKeyDown="handleSpeakPress()">Play</button>
 
