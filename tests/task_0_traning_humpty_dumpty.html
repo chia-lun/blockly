@@ -442,7 +442,10 @@ function handleSpeakPress() {
   // try {
   var code = Blockly.JavaScript.statementToCode(nursery_rhyme_block, 'nursery_rhyme')
   eval(code);
-  var correctAnswer = '  window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Jingle bells, jingle bells\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Jingle all the way\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Oh, what fun it is to ride\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'In a one horse open sleigh\'));';
+  var correctAnswer = '  var number_of_verses = 1;\n' +
+          '  var iterations = number_of_verses\n' +
+          '  ;for(var i = 0; i < iterations; i++){  window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Humpty Dumpty sat on a wall\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Humpty Dumpty had a great fall\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance("All the king\'s horses and all the king\'s men"));window.speechSynthesis.speak(new SpeechSynthesisUtterance(("Couldn\'t put Humpty together again")));\n' +
+          '  }';
   if (code === correctAnswer){
     var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Excellent, lets move on to the next task.\'));'
     eval(result);
@@ -458,7 +461,10 @@ function handleSpeakPress() {
 }
 
 function speakCorrectVersion() {
-  var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Jingle bells, jingle bells Jingle all the way. Oh, what fun it is to ride. In a one horse open sleigh!\'));'
+  var result = '  var number_of_verses = 1;\n' +
+          '  var iterations = number_of_verses\n' +
+          '  ;for(var i = 0; i < iterations; i++){  window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Humpty Dumpty sat on a wall\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Humpty Dumpty had a great fall\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance("All the king\'s horses and all the king\'s men"));window.speechSynthesis.speak(new SpeechSynthesisUtterance(("Couldn\'t put Humpty together again")));\n' +
+          '  }'
   eval(result);
 }
 

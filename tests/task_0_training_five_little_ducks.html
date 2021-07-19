@@ -458,7 +458,7 @@ function handleSpeakPress() {
 }
 
 function speakCorrectVersion() {
-  var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Jingle bells, jingle bells Jingle all the way. Oh, what fun it is to ride. In a one horse open sleigh!\'));'
+  var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance((5 + \'little ducks went out one day\')));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Over the hills and far away\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Mother duck said, quack, quack, quack, quack\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'But only \' + 4 + \' little ducks came back \'));'
   eval(result);
 }
 

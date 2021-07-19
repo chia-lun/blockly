@@ -543,8 +543,8 @@ Blockly.Blocks['this_is_correct'] = {
 
 Blockly.Blocks['math_is_hard'] = {
   init: function() {
-    this.appendDummyInput()
-        .appendField("math is hard");
+    this.appendDummyInput("TEXT")
+        .appendField("math is hard", "TEXT");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(230);

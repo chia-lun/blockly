@@ -442,7 +442,9 @@ function handleSpeakPress() {
   // try {
   var code = Blockly.JavaScript.statementToCode(nursery_rhyme_block, 'nursery_rhyme')
   eval(code);
-  var correctAnswer = '  window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Jingle bells, jingle bells\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Jingle all the way\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Oh, what fun it is to ride\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'In a one horse open sleigh\'));';
+  var correctAnswer = '  var number_of_ducks = 5;\n' +
+          '  for(var i =0;i <5; i +=1){i= i;  window.speechSynthesis.speak(new SpeechSynthesisUtterance((number_of_ducks + \'little ducks went out one day\')));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Over the hills and far away\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Mother duck said, quack, quack, quack, quack\'));number_of_ducks = number_of_ducks - 1;\n' +
+          '    window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'But only \' + number_of_ducks + \' little ducks came back \'));;}';
   if (code === correctAnswer){
     var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Well done! Do you have any questions? Don’t worry, we will practice some more!\'));'
     eval(result);
@@ -458,7 +460,9 @@ function handleSpeakPress() {
 }
 
 function speakCorrectVersion() {
-  var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Jingle bells, jingle bells Jingle all the way. Oh, what fun it is to ride. In a one horse open sleigh!\'));'
+  var result = '  var number_of_ducks = 5;\n' +
+          '  for(var i =0;i <5; i +=1){i= i;  window.speechSynthesis.speak(new SpeechSynthesisUtterance((number_of_ducks + \'little ducks went out one day\')));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Over the hills and far away\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Mother duck said, quack, quack, quack, quack\'));number_of_ducks = number_of_ducks - 1;\n' +
+          '    window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'But only \' + number_of_ducks + \' little ducks came back \'));;}'
   eval(result);
 }
 
