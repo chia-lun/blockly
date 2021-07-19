@@ -442,10 +442,7 @@ function handleSpeakPress() {
   // try {
   var code = Blockly.JavaScript.statementToCode(nursery_rhyme_block, 'nursery_rhyme')
   eval(code);
-  var correctAnswer = '  var number_of_verses = 1;\n' +
-          '  var iterations = number_of_verses\n' +
-          '  ;for(var i = 0; i < iterations; i++){  window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Humpty Dumpty sat on a wall\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Humpty Dumpty had a great fall\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance("All the king\'s horses and all the king\'s men"));window.speechSynthesis.speak(new SpeechSynthesisUtterance(("Couldn\'t put Humpty together again")));\n' +
-          '  }';
+  var correctAnswer = '  window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Humpty Dumpty sat on a wall\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Humpty Dumpty had a great fall\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance("All the king\'s horses and all the king\'s men"));window.speechSynthesis.speak(new SpeechSynthesisUtterance(("Couldn\'t put Humpty together again")));';
   if (code === correctAnswer){
     var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Excellent, lets move on to the next task.\'));'
     eval(result);
@@ -461,10 +458,7 @@ function handleSpeakPress() {
 }
 
 function speakCorrectVersion() {
-  var result = '  var number_of_verses = 1;\n' +
-          '  var iterations = number_of_verses\n' +
-          '  ;for(var i = 0; i < iterations; i++){  window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Humpty Dumpty sat on a wall\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Humpty Dumpty had a great fall\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance("All the king\'s horses and all the king\'s men"));window.speechSynthesis.speak(new SpeechSynthesisUtterance(("Couldn\'t put Humpty together again")));\n' +
-          '  }'
+  var result = 'window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Humpty Dumpty sat on a wall\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance(\'Humpty Dumpty had a great fall\'));window.speechSynthesis.speak(new SpeechSynthesisUtterance("All the king\'s horses and all the king\'s men"));window.speechSynthesis.speak(new SpeechSynthesisUtterance(("Couldn\'t put Humpty together again")));'
   eval(result);
 }
 
