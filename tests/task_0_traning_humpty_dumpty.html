@@ -588,24 +588,7 @@ h1 {
 
     <block id="nursery_rhyme" type="nursery_rhyme" deletable="false" class="start_blocks">
       <statement name = "nursery_rhyme">
-        <variables>
-          <variable type="verse_count" aria-hidden="true">number of verses</variable>
-        </variables>
-        <block type="new_set_variable_test_1">
-          <value name="number">
-            <shadow type="math_number">
-              <field name="NUM" aria-hidden="true">1</field>
-            </shadow>
-          </value>
-          <next>
-            <block type="repeat">
-              <value name="number_iterations">
-                <block type="verse_count">
-                  <field name="VAR" variabletype="verse_count" aria-hidden="true">number of verses</field>
-                </block>
-              </value>
-              <statement name="inside_code">
-                <block type="rhyme_say">
+        <block type="rhyme_say">
                   <value name="TEXT">
                     <block type="rhyme_humpty_dumpty_sat_on_a_wall">
                     </block>
