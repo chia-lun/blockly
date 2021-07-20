@@ -25,8 +25,6 @@ Blockly.Blocks['rhyme_mary_had_a'] = {
     this.appendDummyInput('TEXT')
         .appendField("Mary had a", 'TEXT');
     this.setOutput(true, null);
-    // this.setNextStatement(true, null);
-    // this.setPreviousStatement(true, null);
     this.setColour(230);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -38,8 +36,6 @@ Blockly.Blocks['rhyme_little_lamb'] = {
     this.appendDummyInput('TEXT')
         .appendField("little lamb", 'TEXT');
     this.setOutput(true, null);
-    // this.setNextStatement(true, null);
-    // this.setPreviousStatement(true, null);
     this.setColour(230);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -51,8 +47,6 @@ Blockly.Blocks['rhyme_whose_fleece'] = {
     this.appendDummyInput('TEXT')
         .appendField("whose fleece was white as snow.", 'TEXT');
     this.setOutput(true, null);
-    // this.setNextStatement(true, null);
-    // this.setPreviousStatement(true, null);
     this.setColour(230);
  this.setTooltip("");
  this.setHelpUrl("");

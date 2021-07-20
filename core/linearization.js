@@ -607,7 +607,6 @@ Blockly.Linearization.prototype.makeBlockList_ = function(node, rootBlock) {
  */
 Blockly.Linearization.prototype.makeBlockSpecificView_ = function(rootNode) {
   var sublist = this.createElement('ul');
-  //sublist.appendChild(this.makeGoBackItem_(rootNode));
 
   var showOnBranch = !this.selected.branch || !this.selected.branch.key;
   if (showOnBranch && !rootNode.getLocation().isShadow()) {

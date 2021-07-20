@@ -34,7 +34,6 @@ Blockly.JavaScript['new_set_variable_test_1'] = function(block) {
 	Blockly.JavaScript.init(workspace);
 	var variable_number_of_verses = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('number_of_verses'), Blockly.Variables.NAME_TYPE);
 	var value_number = Blockly.JavaScript.valueToCode(block, 'number', Blockly.JavaScript.ORDER_ATOMIC);
-	// TODO: Assemble JavaScript into code variable.
 	var code = 'var ' + variable_number_of_verses + ' = ' + value_number +';\n';
 	return code;
 };
